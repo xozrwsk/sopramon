@@ -3,11 +3,37 @@ package sopramonbis.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+
+
+@Entity
+@Table(name="coup")
 public class Coup {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "COU_ID", columnDefinition="INT NOT NULL")
+	@NotNull	
 	private int id;
- private Date date;
- private int degats;
- private int persistance;
+	
+	@Column(name = "COU_DATE", columnDefinition="INT NOT NULL")
+	@NotNull
+	@Temporal(TemporalType.DATE)
+	private Date date;
+	
+	@Column(name = "COU_DEGATS", columnDefinition="INT")
+	private int degats;
+	
+	@Column(name = "COU_PERSISTANCE", columnDefinition="INT")
+	private int persistance;
  
  
 public int getId() {

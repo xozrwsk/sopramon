@@ -9,4 +9,9 @@ import java.util.List;
 		public T save (T entity);
 		public void delete (T entity);
 		public void deleteById (int id);
+
+		
 }
+	
+	
+	

@@ -1,13 +1,49 @@
 package sopramonbis.model;
 
+
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+
+@Entity
+@Table(name="boss")
 public class Boss {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "BOSS_ID", columnDefinition="INT NOT NULL")
+	@NotNull
 	private int id;
-	private String nom;
-	private Type type;
-	private int niveau;
-	private Capacite capacite;
 	
+	@Column(name = "BOSS_NOM",  columnDefinition="VARCHAR(100) NOT NULL")
+	@NotEmpty
+	@Size(max=100)
+	private String nom;
+	
+	@OneToOne
+	@JoinColumn(name = "BOSS_TYPE_ID")
+	private Type type;
+	
+	
+	@Column(name = "BOSS_NIVEAU",  columnDefinition="INT NOT NULL")
+	@NotNull
+	private int niveau;
+	
+	
+	@OneToOne
+	@JoinColumn(name = "BOSS_CAPACITE_ID")
+	private Capacite capacite;
+		
 	
 	public int getId() {
 		return id;
@@ -39,8 +75,5 @@ public class Boss {
 	public void setCapacite(Capacite capacite) {
 		this.capacite = capacite;
 	}
-
-	
-	
 	
 }
