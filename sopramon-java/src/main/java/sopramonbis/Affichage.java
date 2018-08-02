@@ -11,6 +11,7 @@ import sopramonbis.dao.IDAOCombat;
 import sopramonbis.dao.IDAOSopramon;
 import sopramonbis.hibernate.DAOCombatHibernate;
 import sopramonbis.hibernate.DAOSopramonHibernate;
+import sopramonbis.model.Arene;
 import sopramonbis.model.Combat;
 import sopramonbis.model.Signe;
 import sopramonbis.model.Sopramon;
@@ -132,6 +133,7 @@ public class Affichage {
 			int a = lireEntier();
 			nouveauSopramon.setId(a);
 			nouveauCombat.setSopramon(nouveauSopramon);
+			nouveauCombat.setArene(Arene.Donjon);
 
 		} catch (Exception z) {
 			z.printStackTrace();
@@ -142,9 +144,12 @@ public class Affichage {
 	}
 
 	static void save() {
-
+		
+		
+		IDAOSopramon daoSopramon = new DAOSopramonHibernate();
+		Sopramon nouveauSopramon = new Sopramon();
 		Utilisateur nouveauUtilisateur = new Utilisateur();
-
+				
 		System.out.println("Choisir un nom d'utilisateur :");
 		String a = lireChaine();
 		nouveauUtilisateur.setNom(a);
@@ -161,22 +166,7 @@ public class Affichage {
 		String d = lireChaine();
 		nouveauUtilisateur.setPassword(d);
 
-		try {
-
-			Connection myConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sopramon", "root", "");
-			PreparedStatement myStatement = myConnection
-					.prepareStatement("INSERT INTO utilisateur(UT_NOM, UT_PRENOM, UT_USERNAME, UT_PASSWORD)"
-							+ " VALUES ('" + a + "','" + b + "','" + c + "','" + d + "')");
-
-			myStatement.execute();
-
-		} catch (Exception z) {
-			z.printStackTrace();
-		}
-
-		IDAOSopramon daoSopramon = new DAOSopramonHibernate();
-
-		Sopramon nouveauSopramon = new Sopramon();
+		
 
 		System.out.println("Choisir un nom de Sopramon :");
 		String e = lireChaine();
@@ -214,9 +204,7 @@ public class Affichage {
 			nouveauSopramon.getType().setId(2);
 		} else if (f == 6) {
 			nouveauSopramon.getType().setId(2);
-		}
-
-		else if (f == 7) {
+		} else if (f == 7) {
 			nouveauSopramon.getType().setId(3);
 		} else if (f == 8) {
 			nouveauSopramon.getType().setId(3);
@@ -225,8 +213,13 @@ public class Affichage {
 		} else if (f > 9) {
 			nouveauSopramon.getType().setId(4);
 		}
-
+	
+		
+		
+		nouveauSopramon.setUtilisateur(nouveauUtilisateur);
 		daoSopramon.save(nouveauSopramon);
+		
+		
 	}
 
 	static int lireEntier() {

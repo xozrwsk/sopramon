@@ -2,8 +2,11 @@ package sopramonbis.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -17,8 +20,8 @@ import javax.validation.constraints.Size;
 public class Sopramon {
 
 	@Id
-	@Column(name = "SOP_ID", columnDefinition = "INT NOT NULL AUTO_INCREMENT")
-	@NotNull
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "SOP_ID")
 	private int id;
 
 	@Column(name = "SOP_NOM", columnDefinition = "VARCHAR(100) NOT NULL")
@@ -50,7 +53,7 @@ public class Sopramon {
 	@JoinColumn(name = "SOP_SIGNE_ID")
 	private Signe Signe;
 
-	@OneToOne
+	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "SOP_UT_ID")
 	private Utilisateur Utilisateur;
 

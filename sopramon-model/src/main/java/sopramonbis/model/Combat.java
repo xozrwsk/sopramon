@@ -4,28 +4,39 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+@Entity
 
 public class Combat {
 
 	@Id
-	@Column(name = "COM_ID", columnDefinition = "INT NOT NULL AUTO_INCREMENT")
-	@NotNull
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "COM_ID")
 	private int id;
 
 	@Column(name = "COM_DATE", columnDefinition = "DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP")
 	@NotNull
 	private Date dateCombat;
 
-	@ManyToOne
-	@JoinColumn(name = "COM_ARENE")
+	@Enumerated
+	@Column(name = "COM_ARENE")
 	private Arene arene;
 
-	@JoinColumn(name = "COM_SOPRAMON_ID", columnDefinition = "INT NOT NULL DEFAULT 0")
+	@ManyToOne
+	@JoinColumn(name = "COM_TYPE")
 	private Type type;
 
 	@Column(name = "COM_TOURS", columnDefinition = "INT NOT NULL DEFAULT 0")
@@ -34,14 +45,14 @@ public class Combat {
 
 	@ManyToOne
 	@JoinColumn(name = "COM_SOPRAMON_ID")
-	private Sopramon Sopramon;
+	private Sopramon sopramon;
 
 	@ManyToOne
 	@JoinColumn(name = "COM_BOSS_ID")
-	private Boss Boss;
+	private Boss boss;
 
 	@OneToMany(mappedBy = "combat")
-	private List<Coup> coup;
+	private List<Coup> coups;
 
 	public int getId() {
 		return id;
@@ -79,24 +90,34 @@ public class Combat {
 		return tours;
 	}
 
+	public List<Coup> getCoups() {
+		return coups;
+	}
+
+	public void setCoups(List<Coup> coups) {
+		this.coups = coups;
+	}
+
 	public void setTours(int tours) {
 		this.tours = tours;
 	}
 
 	public Sopramon getSopramon() {
-		return Sopramon;
+		return sopramon;
 	}
 
 	public void setSopramon(Sopramon sopramon) {
-		Sopramon = sopramon;
+		this.sopramon = sopramon;
 	}
 
 	public Boss getBoss() {
-		return Boss;
+		return boss;
 	}
 
 	public void setBoss(Boss boss) {
-		Boss = boss;
+		this.boss = boss;
 	}
+
+	
 
 }

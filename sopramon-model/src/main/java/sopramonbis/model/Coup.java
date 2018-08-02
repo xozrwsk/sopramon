@@ -8,10 +8,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
+
+
 
 
 @Entity
@@ -20,7 +24,7 @@ public class Coup {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "COU_ID", columnDefinition="INT NOT NULL")
+	@Column(name = "COU_ID")
 	@NotNull	
 	private int id;
 	
@@ -34,6 +38,20 @@ public class Coup {
 	
 	@Column(name = "COU_PERSISTANCE", columnDefinition="INT")
 	private int persistance;
+	
+	
+	@ManyToOne
+	@JoinColumn(name="COU_COMBAT_ID")
+	private Combat combat;
+	
+	@ManyToOne
+	@JoinColumn(name="COU_SOPRAMON_ID")
+	private Sopramon sopramon;
+	
+	@ManyToOne
+	@JoinColumn(name="COU_BOSS_ID")
+	private Boss boss;
+	
  
  
 public int getId() {

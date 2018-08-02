@@ -1,10 +1,16 @@
 package sopramonbis.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -12,8 +18,8 @@ import javax.validation.constraints.NotNull;
 public class Capacite {
 	
 	@Id
-	@Column(name = "CAP_ID", columnDefinition = "INT NOT NULL AUTO_INCREMENT")
-	@NotNull
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "CAP_ID")
 	private int id;
 	
 	@Column(name = "CAP_POINTVIE", columnDefinition = "INT NOT NULL")
@@ -36,17 +42,18 @@ public class Capacite {
 	@NotNull
 	private int vitesse;
 	
-	@ManyToOne
-	@JoinColumn(name = "CAP_ITEM_ID")
-	private Item Item;
+	@OneToMany(mappedBy = "capacite")
+	private List<Item> items;
 	
 	
+
+
 	
-	public Item getItem() {
-		return Item;
+	public List<Item> getItems() {
+		return items;
 	}
-	public void setItem(Item item) {
-		Item = item;
+	public void setItems(List<Item> items) {
+		this.items = items;
 	}
 	public int getId() {
 		return id;

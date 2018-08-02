@@ -1,5 +1,6 @@
 package sopramonbis.model;
 
+
 public enum Arene {
 
 	Versus(1),
