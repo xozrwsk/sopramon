@@ -9,22 +9,6 @@ import sopramonbis.model.Coup;
 
 public class IDAOCoupSQL implements IDAOCoup {
 
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	@Override
