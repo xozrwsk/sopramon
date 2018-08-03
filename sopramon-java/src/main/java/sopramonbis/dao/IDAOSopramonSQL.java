@@ -201,4 +201,10 @@ public class IDAOSopramonSQL extends IDAOSQL implements IDAOSopramon {
 		}
 	}
 
+	@Override
+	public Sopramon findBySopramon(String username, String password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

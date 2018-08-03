@@ -42,19 +42,19 @@ public class Capacite {
 	@NotNull
 	private int vitesse;
 	
-	@OneToMany(mappedBy = "capacite")
-	private List<Item> items;
+//	@OneToMany(mappedBy = "capacite")
+//	private List<Item> items;
 	
 	
 
 
 	
-	public List<Item> getItems() {
-		return items;
-	}
-	public void setItems(List<Item> items) {
-		this.items = items;
-	}
+//	public List<Item> getItems() {
+//		return items;
+//	}
+//	public void setItems(List<Item> items) {
+//		this.items = items;
+//	}
 	public int getId() {
 		return id;
 	}

@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -28,11 +29,13 @@ public class Item {
 	
 	@Column(name = "ITE_PRIX", columnDefinition = "DOUBLE NOT NULL")
 	@NotNull
-	private Double prix;
+	private int prix;
 	
-	@ManyToOne
-	@JoinColumn(name = "ITE_CAPACITE")
-	private Capacite capacite;
+	
+	@Column(name = "ITE_DESCRIPTION",  columnDefinition = "VARCHAR(300) NOT NULL")
+	@NotEmpty
+	@Size(max = 300)
+	private String description;
 	
 	@Column(name = "ITE_ATT", columnDefinition = "INT SIGNED NOT NULL")
 	@NotNull
@@ -87,18 +90,22 @@ public class Item {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-	public Double getPrix() {
+	public int getPrix() {
 		return prix;
 	}
-	public void setPrix(Double prix) {
+	public void setPrix(int prix) {
 		this.prix = prix;
 	}
-	public Capacite getCapacite() {
-		return capacite;
+	public String getDescription() {
+		return description;
 	}
-	public void setCapacite(Capacite capacite) {
-		this.capacite = capacite;
+	public void setDescription(String description) {
+		this.description = description;
 	}
+	
+	
+
+	
 
  
 }

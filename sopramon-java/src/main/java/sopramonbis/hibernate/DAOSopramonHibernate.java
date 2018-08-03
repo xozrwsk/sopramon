@@ -43,5 +43,13 @@ public class DAOSopramonHibernate extends DAOHibernate implements IDAOSopramon {
 		delete(mySopramon);
 		
 	}
+	
+	public Sopramon findBySopramon(String username, String password) {
+		return em
+				.createQuery("select distinct s from Sopramon s where s.Utilisateur.username = :username and s.Utilisateur.password = :password", Sopramon.class)
+				.setParameter("username", username)
+				.setParameter("password", password)
+				.getSingleResult();
+	}
 
 }

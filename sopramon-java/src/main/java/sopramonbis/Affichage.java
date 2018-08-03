@@ -10,20 +10,23 @@ import java.util.Scanner;
 import javax.persistence.Query;
 
 import sopramonbis.dao.IDAOCombat;
+import sopramonbis.dao.IDAOItem;
 import sopramonbis.dao.IDAOSopramon;
 import sopramonbis.hibernate.DAOCombatHibernate;
 import sopramonbis.hibernate.DAOHibernate;
+import sopramonbis.hibernate.DAOItemHibernate;
 import sopramonbis.hibernate.DAOSopramonHibernate;
 import sopramonbis.model.Arene;
 import sopramonbis.model.Boss;
 import sopramonbis.model.Capacite;
 import sopramonbis.model.Combat;
+import sopramonbis.model.Item;
 import sopramonbis.model.Signe;
 import sopramonbis.model.Sopramon;
 import sopramonbis.model.Type;
 import sopramonbis.model.Utilisateur;
 
-public class Affichage{
+public class Affichage {
 
 	public static void main(String[] args) {
 
@@ -33,24 +36,49 @@ public class Affichage{
 
 	static void choix() {
 
+		System.out.println("°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°");
+		System.out.println("          BIENVENUE A SOPRAGAMING         ");
+		System.out.println("°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°\n");
+
+		System.out.println("   --» Se connecter \nSaisir l'identifiant utilisateur : ");
+		String u = lireChaine();
+		System.out.println("Saisir le mot de passe : ");
+		String y = lireChaine();
+
+		IDAOSopramon daoSopramon = new DAOSopramonHibernate();
+
+		boolean erreur = true;
+		while (erreur) {
+			try {
+				Sopramon s = daoSopramon.findBySopramon(u, y);
+				System.out.println("Vous êtes bien connecté avec votre Sopramon :" + s.getNom());
+				menu();
+			} catch (Exception e) {
+				erreur = false;
+				System.err.println("==== > Identifiants et/ou mots de passe érroné(s) <==== ");
+				choix();
+			}
+		}
+	}
+
+	static void menu() {
+
 		int q = 0;
 		while (q < 1 || q > 7) {
 
-			System.out.println("--------------------------");
-			System.out.println("           MENU           ");
-			System.out.println("--------------------------");
+			System.out.println("---------------»  «--------------");
+			System.out.println("               MENU              ");
+			System.out.println("---------------»  «--------------");
 
 			System.out.println("1. S'inscrire et créer un Sopramon");
 			System.out.println("2. Lister tous les Sopramon");
 			System.out.println("3. Trouver un Sopramon avec son ID");
 			System.out.println("4. Lancer un combat Sopra vs Boss");
 			System.out.println("5. Ajouter un item");
-			System.out.println("6. Lister les item");
-			System.out.println("--------------------------");
+			System.out.println("6. Lister les item \n");
 
-			System.out.println("   Choisir un programme :");
+			System.out.println("   --» Choisir un programme :");
 			q = lireEntier();
-			System.out.println("                     ");
 
 			if (q == 1) {
 				save();
@@ -64,17 +92,22 @@ public class Affichage{
 				findById();
 
 			}
-			
+
 			else if (q == 4) {
 				combat();
 			}
-		}
+		
+		
 	
-				
-//			else if (q == 5) {
-//				Item();
-//			}
-}
+			else if (q == 5) {
+				creerItem();
+			}
+
+			else if (q == 6) {
+				listerItem();
+			}
+		}
+	}
 
 	static void findAll() {
 
@@ -139,7 +172,7 @@ public class Affichage{
 			nouveauSopramon.setId(a);
 			nouveauCombat.setSopramon(nouveauSopramon);
 			nouveauCombat.setArene(Arene.Donjon);
-			
+
 			Boss nouveauBoss = new Boss();
 			Type nouveauType = new Type();
 			nouveauCombat.setBoss(nouveauBoss);
@@ -147,7 +180,7 @@ public class Affichage{
 			nouveauCombat.setDateCombat(new Date());
 			nouveauCombat.setType(nouveauType);
 			nouveauCombat.getType().setId(4);
-			
+
 		} catch (Exception z) {
 			z.printStackTrace();
 		}
@@ -157,12 +190,11 @@ public class Affichage{
 	}
 
 	static void save() {
-		
-		
+
 		IDAOSopramon daoSopramon = new DAOSopramonHibernate();
 		Sopramon nouveauSopramon = new Sopramon();
 		Utilisateur nouveauUtilisateur = new Utilisateur();
-				
+
 		System.out.println("Choisir un nom d'utilisateur :");
 		String a = lireChaine();
 		nouveauUtilisateur.setNom(a);
@@ -179,12 +211,9 @@ public class Affichage{
 		String d = lireChaine();
 		nouveauUtilisateur.setPassword(d);
 
-		
-
 		System.out.println("Choisir un nom de Sopramon :");
 		String e = lireChaine();
 		nouveauSopramon.setNom(e);
-	
 
 		System.out.println("Rentrez votre date de naissance");
 
@@ -227,20 +256,94 @@ public class Affichage{
 		} else if (f > 9) {
 			nouveauSopramon.getType().setId(4);
 		}
-	
+
 		Capacite macapacite = new Capacite();
 		macapacite.setAttaque(50);
 		macapacite.setDefense(50);
 		macapacite.setEsquive(50);
 		macapacite.setPointDeVie(50);
 		macapacite.setVitesse(50);
-		
+
 		nouveauSopramon.setArgent(100.0);
 		nouveauSopramon.setCapacite(macapacite);
 		nouveauSopramon.setUtilisateur(nouveauUtilisateur);
 		daoSopramon.save(nouveauSopramon);
+
+	}
+
+	static void creerItem() {
+
+		IDAOItem daoItem = new DAOItemHibernate();
+		Item nouveauItem = new Item();
+
+		System.out.println("Nom de l'item :");
+		String a = lireChaine();
+		nouveauItem.setNom(a);
+
+		System.out.println("Prix de l'item :");
+		int b = lireEntier();
+		nouveauItem.setPrix(b);
+
+		System.out.println("Description de l'item :");
+		String c = lireChaine();
+		nouveauItem.setDescription(c);
+
+		System.out.println("Caractéristique d'attaque :");
+		int d = lireEntier();
+		nouveauItem.setAttaque(d);
+
+		System.out.println("Caractéristique de défense :");
+		int e = lireEntier();
+		nouveauItem.setDefense(e);
+
+		System.out.println("Caractéristique de vitesse :");
+		int f = lireEntier();
+		nouveauItem.setVitesse(f);
+
+		System.out.println("Caractéristique d'esquive :");
+		int g = lireEntier();
+		nouveauItem.setEsquive(g);
+
+		daoItem.save(nouveauItem);
+
+		System.out.println("Nom : " + a);
+		System.out.println("Prix : " + b);
+		System.out.println("Description : " + c);
+		System.out.println("Attaque : " + d);
+		System.out.println("Défense : " + e);
+		System.out.println("Vitesse : " + f);
+		System.out.println("Esquive : " + g);
+
+	}
+
+	static void listerItem() {
+
+		int q = 0;
+
+		do {
+			IDAOItem daoItem = new DAOItemHibernate();
+			System.out.println("Liste des item :");
+			System.out.println("0 - Retour");
+			for (Item i : daoItem.findAll()) {
+				System.out.println(i.getId() + " - " + i.getNom());
+			}
+
+			System.out.println("Choisir un item :");
+			q = lireEntier();
+			Item j = daoItem.findById(q);
+
+			if (j != null) {
+			System.out.println("Nom : " + j.getNom());
+			System.out.println("Prix : " + j.getPrix());
+			System.out.println("Description : " + j.getDescription());
+			System.out.println("Attaque : " + j.getAttaque());
+			System.out.println("Défense : " + j.getDefense());
+			System.out.println("Vitesse : " + j.getVitesse());
+			System.out.println("Esquive : " + j.getEsquive());
+			}
+		} while (q != 0);
 		
-		
+		choix();
 	}
 
 	static int lireEntier() {
@@ -259,7 +362,7 @@ public class Affichage{
 		Scanner myScanner = new Scanner(System.in);
 
 		try {
-			return myScanner.next();
+			return myScanner.nextLine();
 		}
 
 		catch (Exception ex) {
