@@ -36,11 +36,11 @@ public class Affichage {
 
 	static void choix() {
 
-		System.out.println("ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½");
+		System.out.println("°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°");
 		System.out.println("          BIENVENUE A SOPRAGAMING         ");
-		System.out.println("ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½\n");
+		System.out.println("°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°");
 
-		System.out.println("   --ï¿½ Se connecter \nSaisir l'identifiant utilisateur : ");
+		System.out.println("   --> Se connecter \nSaisir l'identifiant utilisateur : ");
 		String u = lireChaine();
 		System.out.println("Saisir le mot de passe : ");
 		String y = lireChaine();
@@ -51,11 +51,11 @@ public class Affichage {
 		while (erreur) {
 			try {
 				Sopramon s = daoSopramon.findBySopramon(u, y);
-				System.out.println("Vous ï¿½tes bien connectï¿½ avec votre Sopramon :" + s.getNom());
+				System.out.println("Vous etes bien connecte avec votre Sopramon :" + s.getNom());
 				menu();
 			} catch (Exception e) {
 				erreur = false;
-				System.err.println("==== > Identifiants et/ou mots de passe ï¿½rronï¿½(s) <==== ");
+				System.err.println("==== > Identifiants et/ou mots de passe errone(s) <==== ");
 				choix();
 			}
 		}
@@ -66,18 +66,18 @@ public class Affichage {
 		int q = 0;
 		while (q < 1 || q > 7) {
 
-			System.out.println("---------------ï¿½  ï¿½--------------");
-			System.out.println("               MENU              ");
-			System.out.println("---------------ï¿½  ï¿½--------------");
+			System.out.println("--------------->>  <<--------------");
+			System.out.println("                MENU              ");
+			System.out.println("--------------->>  <<--------------");
 
-			System.out.println("1. S'inscrire et crï¿½er un Sopramon");
+			System.out.println("1. S'inscrire et creer un Sopramon");
 			System.out.println("2. Lister tous les Sopramon");
 			System.out.println("3. Trouver un Sopramon avec son ID");
 			System.out.println("4. Lancer un combat Sopra vs Boss");
 			System.out.println("5. Ajouter un item");
 			System.out.println("6. Lister les item \n");
 
-			System.out.println("   --ï¿½ Choisir un programme :");
+			System.out.println("   --> Choisir un programme :");
 			q = lireEntier();
 
 			if (q == 1) {
@@ -96,9 +96,7 @@ public class Affichage {
 			else if (q == 4) {
 				combat();
 			}
-		
-		
-	
+
 			else if (q == 5) {
 				creerItem();
 			}
@@ -118,7 +116,7 @@ public class Affichage {
 			System.out.println("Identifiant : " + s.getId());
 			System.out.println(s.getNom());
 			System.out.println(s.getDateNaissance());
-			System.out.println("Expï¿½rience : " + s.getExperience());
+			System.out.println("Experience : " + s.getExperience());
 			System.out.println("Niveau : " + s.getNiveau());
 			System.out.println("Thunes : " + s.getArgent());
 			System.out.println("Points de vie : " + s.getCapacite().getPointDeVie());
@@ -148,7 +146,7 @@ public class Affichage {
 			System.out.println("Identifiant : " + s.getId());
 			System.out.println(s.getNom());
 			System.out.println(s.getDateNaissance());
-			System.out.println("Expï¿½rience : " + s.getExperience());
+			System.out.println("Experience : " + s.getExperience());
 			System.out.println("Niveau : " + s.getNiveau());
 			System.out.println("Thunes : " + s.getArgent());
 
@@ -198,7 +196,7 @@ public class Affichage {
 		String a = lireChaine();
 		nouveauUtilisateur.setNom(a);
 
-		System.out.println("Choisir un prï¿½nom d'utilisateur :");
+		System.out.println("Choisir un prenom d'utilisateur :");
 		String b = lireChaine();
 		nouveauUtilisateur.setPrenom(b);
 
@@ -287,19 +285,19 @@ public class Affichage {
 		String c = lireChaine();
 		nouveauItem.setDescription(c);
 
-		System.out.println("Caractï¿½ristique d'attaque :");
+		System.out.println("Caracteristique d'attaque :");
 		int d = lireEntier();
 		nouveauItem.setAttaque(d);
 
-		System.out.println("Caractï¿½ristique de dï¿½fense :");
+		System.out.println("Caracteristique de defense :");
 		int e = lireEntier();
 		nouveauItem.setDefense(e);
 
-		System.out.println("Caractï¿½ristique de vitesse :");
+		System.out.println("Caracteristique de vitesse :");
 		int f = lireEntier();
 		nouveauItem.setVitesse(f);
 
-		System.out.println("Caractï¿½ristique d'esquive :");
+		System.out.println("Caracteristique d'esquive :");
 		int g = lireEntier();
 		nouveauItem.setEsquive(g);
 
@@ -309,7 +307,7 @@ public class Affichage {
 		System.out.println("Prix : " + b);
 		System.out.println("Description : " + c);
 		System.out.println("Attaque : " + d);
-		System.out.println("Dï¿½fense : " + e);
+		System.out.println("Defense : " + e);
 		System.out.println("Vitesse : " + f);
 		System.out.println("Esquive : " + g);
 
@@ -332,16 +330,16 @@ public class Affichage {
 			Item j = daoItem.findById(q);
 
 			if (j != null) {
-			System.out.println("Nom : " + j.getNom());
-			System.out.println("Prix : " + j.getPrix());
-			System.out.println("Description : " + j.getDescription());
-			System.out.println("Attaque : " + j.getAttaque());
-			System.out.println("Dï¿½fense : " + j.getDefense());
-			System.out.println("Vitesse : " + j.getVitesse());
-			System.out.println("Esquive : " + j.getEsquive());
+				System.out.println("Nom : " + j.getNom());
+				System.out.println("Prix : " + j.getPrix());
+				System.out.println("Description : " + j.getDescription());
+				System.out.println("Attaque : " + j.getAttaque());
+				System.out.println("Defense : " + j.getDefense());
+				System.out.println("Vitesse : " + j.getVitesse());
+				System.out.println("Esquive : " + j.getEsquive());
 			}
 		} while (q != 0);
-		
+
 		choix();
 	}
 
