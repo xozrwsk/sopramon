@@ -45,7 +45,7 @@ public class Sopramon {
 	@NotNull
 	private Double argent;
 
-	@OneToOne
+	@OneToOne (cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "SOP_CAPACITE_ID")
 	private Capacite capacite;
 

@@ -7,18 +7,23 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
+import javax.persistence.Query;
+
 import sopramonbis.dao.IDAOCombat;
 import sopramonbis.dao.IDAOSopramon;
 import sopramonbis.hibernate.DAOCombatHibernate;
+import sopramonbis.hibernate.DAOHibernate;
 import sopramonbis.hibernate.DAOSopramonHibernate;
 import sopramonbis.model.Arene;
+import sopramonbis.model.Boss;
+import sopramonbis.model.Capacite;
 import sopramonbis.model.Combat;
 import sopramonbis.model.Signe;
 import sopramonbis.model.Sopramon;
 import sopramonbis.model.Type;
 import sopramonbis.model.Utilisateur;
 
-public class Affichage {
+public class Affichage{
 
 	public static void main(String[] args) {
 
@@ -35,9 +40,9 @@ public class Affichage {
 			System.out.println("           MENU           ");
 			System.out.println("--------------------------");
 
-			System.out.println("1. Créer un Sopramon");
+			System.out.println("1. S'inscrire et créer un Sopramon");
 			System.out.println("2. Lister tous les Sopramon");
-			System.out.println("3. Trouver un Sopramon");
+			System.out.println("3. Trouver un Sopramon avec son ID");
 			System.out.println("4. Lancer un combat Sopra vs Boss");
 			System.out.println("5. Ajouter un item");
 			System.out.println("6. Lister les item");
@@ -64,12 +69,12 @@ public class Affichage {
 				combat();
 			}
 		}
-	}
+	
 				
 //			else if (q == 5) {
 //				Item();
 //			}
-		
+}
 
 	static void findAll() {
 
@@ -134,7 +139,15 @@ public class Affichage {
 			nouveauSopramon.setId(a);
 			nouveauCombat.setSopramon(nouveauSopramon);
 			nouveauCombat.setArene(Arene.Donjon);
-
+			
+			Boss nouveauBoss = new Boss();
+			Type nouveauType = new Type();
+			nouveauCombat.setBoss(nouveauBoss);
+			nouveauCombat.getBoss().setId(1);
+			nouveauCombat.setDateCombat(new Date());
+			nouveauCombat.setType(nouveauType);
+			nouveauCombat.getType().setId(4);
+			
 		} catch (Exception z) {
 			z.printStackTrace();
 		}
@@ -171,6 +184,7 @@ public class Affichage {
 		System.out.println("Choisir un nom de Sopramon :");
 		String e = lireChaine();
 		nouveauSopramon.setNom(e);
+	
 
 		System.out.println("Rentrez votre date de naissance");
 
@@ -214,8 +228,15 @@ public class Affichage {
 			nouveauSopramon.getType().setId(4);
 		}
 	
+		Capacite macapacite = new Capacite();
+		macapacite.setAttaque(50);
+		macapacite.setDefense(50);
+		macapacite.setEsquive(50);
+		macapacite.setPointDeVie(50);
+		macapacite.setVitesse(50);
 		
-		
+		nouveauSopramon.setArgent(100.0);
+		nouveauSopramon.setCapacite(macapacite);
 		nouveauSopramon.setUtilisateur(nouveauUtilisateur);
 		daoSopramon.save(nouveauSopramon);
 		
