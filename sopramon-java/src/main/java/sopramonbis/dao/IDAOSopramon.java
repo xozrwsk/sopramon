@@ -1,5 +1,9 @@
 package sopramonbis.dao;
 
+
+
+import java.util.List;
+
 import sopramonbis.model.Sopramon;
 
 public interface IDAOSopramon extends IDAO <Sopramon>{

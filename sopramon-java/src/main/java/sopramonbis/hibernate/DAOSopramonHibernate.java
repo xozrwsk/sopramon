@@ -2,6 +2,7 @@ package sopramonbis.hibernate;
 
 import java.util.List;
 
+
 import sopramonbis.dao.IDAOSopramon;
 import sopramonbis.model.Combat;
 import sopramonbis.model.Sopramon;
@@ -53,3 +54,5 @@ public class DAOSopramonHibernate extends DAOHibernate implements IDAOSopramon {
 	}
 
 }
+
+
