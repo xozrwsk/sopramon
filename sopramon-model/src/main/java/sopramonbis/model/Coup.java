@@ -36,7 +36,7 @@ public class Coup {
 	@Column(name = "COU_DEGATS", columnDefinition="INT")
 	private int degats;
 	
-	@Column(name = "COU_PERSISTANCE", columnDefinition="INT")
+	@Column(name = "COU_PERSISTENCE", columnDefinition="INT")
 	private int persistance;
 	
 	
