@@ -78,6 +78,24 @@ public int getPersistance() {
 public void setPersistance(int persistance) {
 	this.persistance = persistance;
 }
+public Combat getCombat() {
+	return combat;
+}
+public void setCombat(Combat combat) {
+	this.combat = combat;
+}
+public Sopramon getSopramon() {
+	return sopramon;
+}
+public void setSopramon(Sopramon sopramon) {
+	this.sopramon = sopramon;
+}
+public Boss getBoss() {
+	return boss;
+}
+public void setBoss(Boss boss) {
+	this.boss = boss;
+}
  
  
  

@@ -4,22 +4,18 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 import javax.persistence.Query;
-
-import sopramonbis.dao.IDAOCombat;
-import sopramonbis.dao.IDAOItem;
-import sopramonbis.dao.IDAOSopramon;
-import sopramonbis.hibernate.DAOCombatHibernate;
-import sopramonbis.hibernate.DAOHibernate;
-import sopramonbis.hibernate.DAOItemHibernate;
-import sopramonbis.hibernate.DAOSopramonHibernate;
 import sopramonbis.model.Arene;
 import sopramonbis.model.Boss;
 import sopramonbis.model.Capacite;
 import sopramonbis.model.Combat;
+import sopramonbis.model.Coup;
 import sopramonbis.model.Item;
 import sopramonbis.model.Signe;
 import sopramonbis.model.Sopramon;
@@ -28,7 +24,7 @@ import sopramonbis.model.Utilisateur;
 
 public class Affichage {
 
-	public static void main(String[] args) {
+	public void run(String[] args) {
 
 		choix();
 
@@ -157,32 +153,52 @@ public class Affichage {
 	static void combat() {
 
 		IDAOCombat daoCombat = new DAOCombatHibernate();
-
+		IDAOCoup daoCoup = new DAOCoupHibernate();
 		Combat nouveauCombat = new Combat();
-
+		Coup nouveauCoup = new Coup();
 		try {
 
+			
+			List<Coup> coups = new ArrayList<Coup>();
+
+			Random r = new Random();
+			int n = r.nextInt(5);
+			nouveauCombat.setCoups(coups);
+			System.out.println("Fight entre le boss et le sopramon. Nombre de coups : " + n);
+
+			for (int i = 0; i < n; i++) {
+				coups.add(i, nouveauCoup);
+			}
+			
 			System.out.println("Saisir l'id d'un sopramon (entre 1 et 10) :");
 
 			Sopramon nouveauSopramon = new Sopramon();
 			int a = lireEntier();
 			nouveauSopramon.setId(a);
 			nouveauCombat.setSopramon(nouveauSopramon);
+			nouveauCoup.setSopramon(nouveauSopramon);
+
 			nouveauCombat.setArene(Arene.Donjon);
 
 			Boss nouveauBoss = new Boss();
 			Type nouveauType = new Type();
 			nouveauCombat.setBoss(nouveauBoss);
 			nouveauCombat.getBoss().setId(1);
+			nouveauCoup.setBoss(nouveauBoss);
+			nouveauBoss.setId(1);
+
 			nouveauCombat.setDateCombat(new Date());
 			nouveauCombat.setType(nouveauType);
 			nouveauCombat.getType().setId(4);
+			nouveauCoup.setCombat(nouveauCombat);
+			nouveauCoup.setDate(new Date());
 
 		} catch (Exception z) {
 			z.printStackTrace();
 		}
 
 		daoCombat.save(nouveauCombat);
+		daoCoup.save(nouveauCoup);
 
 	}
 

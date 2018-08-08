@@ -8,10 +8,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-import sopramonbis.dao.IDAOCombat;
-import sopramonbis.dao.IDAOCombatSQL;
-import sopramonbis.dao.IDAOSopramon;
-import sopramonbis.dao.IDAOSopramonSQL;
+import sopramon.dao.IDAOCombat;
+import sopramon.dao.IDAOCombatSQL;
+import sopramon.dao.IDAOSopramon;
+import sopramon.dao.IDAOSopramonSQL;
 import sopramonbis.model.Combat;
 import sopramonbis.model.Signe;
 import sopramonbis.model.Sopramon;
