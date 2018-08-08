@@ -32,9 +32,9 @@ public class Affichage {
 
 	static void choix() {
 
-		System.out.println("°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°");
+		System.out.println("ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½");
 		System.out.println("          BIENVENUE A SOPRAGAMING         ");
-		System.out.println("°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°");
+		System.out.println("ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½");
 
 		System.out.println("   --> Se connecter \nSaisir l'identifiant utilisateur : ");
 		String u = lireChaine();
@@ -100,7 +100,9 @@ public class Affichage {
 			else if (q == 6) {
 				listerItem();
 			}
+
 		}
+
 	}
 
 	static void findAll() {
@@ -147,7 +149,6 @@ public class Affichage {
 			System.out.println("Thunes : " + s.getArgent());
 
 		}
-
 	}
 
 	static void combat() {

@@ -3,6 +3,7 @@ package sopramonbis.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -36,11 +37,12 @@ public class Coup {
 	@Column(name = "COU_DEGATS", columnDefinition="INT")
 	private int degats;
 	
-	@Column(name = "COU_PERSISTANCE", columnDefinition="INT")
+	@Column(name = "COU_PERSISTENCE", columnDefinition="INT")
 	private int persistance;
 	
 	
-	@ManyToOne
+
+	@ManyToOne 
 	@JoinColumn(name="COU_COMBAT_ID")
 	private Combat combat;
 	
@@ -97,7 +99,24 @@ public void setBoss(Boss boss) {
 	this.boss = boss;
 }
  
- 
+public Combat getCombat() {
+	return combat;
+}
+public void setCombat(Combat combat) {
+	this.combat = combat;
+}
+public Sopramon getSopramon() {
+	return sopramon;
+}
+public void setSopramon(Sopramon sopramon) {
+	this.sopramon = sopramon;
+}
+public Boss getBoss() {
+	return boss;
+}
+public void setBoss(Boss boss) {
+	this.boss = boss;
+}
  
  
 }
