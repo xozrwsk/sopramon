@@ -29,9 +29,9 @@ public class Coup {
 	@NotNull	
 	private int id;
 	
-	@Column(name = "COU_DATE", columnDefinition="INT NOT NULL")
+	@Column(name = "COU_DATE")
 	@NotNull
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date date;
 	
 	@Column(name = "COU_DEGATS", columnDefinition="INT")

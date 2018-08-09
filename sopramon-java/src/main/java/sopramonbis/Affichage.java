@@ -28,6 +28,7 @@ import sopramonbis.model.Utilisateur;
 
 public class Affichage {
 
+//	private static final String else if = null;
 	@Autowired
 	private IDAOSopramon daoSopramon;
 	@Autowired
@@ -47,9 +48,9 @@ public class Affichage {
 
 	public void choix() {
 
-		System.out.println("°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°");
+		System.out.println("ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½");
 		System.out.println("           BIENVENUE A SOPRAGAMING         ");
-		System.out.println("°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°");
+		System.out.println("ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½");
 
 		System.out.println("   --> Se connecter \nSaisir l'identifiant utilisateur : ");
 		String u = lireChaine();
@@ -192,38 +193,42 @@ public class Affichage {
 			if (n == 1) {
 				try {
 					while (bossvie > 0 && sopvie > 0) {
-						Coup nouveauCoup = new Coup();
-						nouveauCoup.setSopramon(nouveauSopramon);
-						nouveauCoup.setBoss(nouveauBoss);
+
+						Coup coupSop = new Coup();
+						coupSop.setSopramon(nouveauSopramon);
+						coupSop.setBoss(nouveauBoss);
 
 						System.out.println("C'est : " + s.get().getNom() + " qui attaque");
-						// tant que la vie du boss est > 0 : la vie du boss diminue de l'attaque du
-						// Sopramon.
-						// les points de vie du boss changent (-50pts)
 						bossvie = b.get().getCapacite().getPointDeVie() - s.get().getCapacite().getAttaque();
 						b.get().getCapacite().setPointDeVie(bossvie);
 						System.out.println("Points de vie restants de : " + b.get().getNom() + " " + bossvie);
 
 						int degats = s.get().getCapacite().getAttaque();
-						nouveauCoup.setDegats(degats);
-						nouveauCoup.getSopramon().setId(a);
-						nouveauCoup.getSopramon().setId(1);
-						nouveauCoup.setCombat(nouveauCombat);
-						nouveauCoup.setDate(new Date());
-						daoCoup.save(nouveauCoup);
+						coupSop.setDegats(degats);
+						coupSop.getSopramon().setId(a);
+						coupSop.getSopramon().setId(1);
+						coupSop.setCombat(nouveauCombat);
+						coupSop.setDate(new Date());
+
+						daoCoup.save(coupSop);
+
+						Coup coupBoss = new Coup();
+						coupBoss.setSopramon(nouveauSopramon);
+						coupBoss.setBoss(nouveauBoss);
 
 						System.out.println("C'est : " + b.get().getNom() + " qui attaque");
 						sopvie = s.get().getCapacite().getPointDeVie() - b.get().getCapacite().getAttaque();
 						s.get().getCapacite().setPointDeVie(sopvie);
 						System.out.println("Points de vie restants : " + s.get().getNom() + " " + sopvie);
 
-						int degatb = s.get().getCapacite().getAttaque();
-						nouveauCoup.setDegats(degatb);
-						nouveauCoup.getSopramon().setId(a);
-						nouveauCoup.getSopramon().setId(1);
-						nouveauCoup.setCombat(nouveauCombat);
-						nouveauCoup.setDate(new Date());
-						daoCoup.save(nouveauCoup);
+						int degatb = b.get().getCapacite().getAttaque();
+						coupBoss.setDegats(degatb);
+						coupBoss.getSopramon().setId(a);
+						coupBoss.getSopramon().setId(1);
+						coupBoss.setCombat(nouveauCombat);
+						coupBoss.setDate(new Date());
+
+						daoCoup.save(coupBoss);
 					}
 				} catch (Exception z) {
 					z.printStackTrace();
@@ -233,26 +238,28 @@ public class Affichage {
 			else if (n == 0) {
 				try {
 					while (bossvie > 0 && sopvie > 0) {
-						Coup nouveauCoup = new Coup();
-						nouveauCoup.setSopramon(nouveauSopramon);
-						nouveauCoup.setBoss(nouveauBoss);
+
+						Coup coupBoss = new Coup();
+						coupBoss.setSopramon(nouveauSopramon);
+						coupBoss.setBoss(nouveauBoss);
 
 						System.out.println("C'est : " + b.get().getNom() + " qui attaque");
-						// tant que la vie du sopramon est > 0 : la vie du sopramon diminue de l'attaque
-						// du Sopramon.
-						// les points de vie du sopramon changent (-50pts)
-						// on enregistre le coup.
 						bossvie = s.get().getCapacite().getPointDeVie() - b.get().getCapacite().getAttaque();
 						System.out.println("Points de vie restants : " + s.get().getNom() + " " + bossvie);
 						s.get().getCapacite().setPointDeVie(bossvie);
 
 						int degatb = b.get().getCapacite().getAttaque();
-						nouveauCoup.setDegats(degatb);
-						nouveauCoup.getSopramon().setId(a);
-						nouveauCoup.getSopramon().setId(1);
-						nouveauCoup.setCombat(nouveauCombat);
-						nouveauCoup.setDate(new Date());
-						daoCoup.save(nouveauCoup);
+						coupBoss.setDegats(degatb);
+						coupBoss.getSopramon().setId(a);
+						coupBoss.getSopramon().setId(1);
+						coupBoss.setCombat(nouveauCombat);
+						coupBoss.setDate(new Date());
+
+						daoCoup.save(coupBoss);
+
+						Coup coupSop = new Coup();
+						coupSop.setSopramon(nouveauSopramon);
+						coupSop.setBoss(nouveauBoss);
 
 						System.out.println("C'est : " + s.get().getNom() + " qui attaque");
 						sopvie = b.get().getCapacite().getPointDeVie() - s.get().getCapacite().getAttaque();
@@ -260,12 +267,14 @@ public class Affichage {
 						System.out.println("Points de vie restants de : " + b.get().getNom() + " " + sopvie);
 
 						int degats = s.get().getCapacite().getAttaque();
-						nouveauCoup.setDegats(degats);
-						nouveauCoup.getSopramon().setId(a);
-						nouveauCoup.getSopramon().setId(1);
-						nouveauCoup.setCombat(nouveauCombat);
-						nouveauCoup.setDate(new Date());
-						daoCoup.save(nouveauCoup);
+						coupSop.setDegats(degats);
+						coupSop.getSopramon().setId(a);
+						coupSop.getSopramon().setId(1);
+						coupSop.setCombat(nouveauCombat);
+						coupSop.setDate(new Date());
+
+						daoCoup.save(coupSop);
+
 					}
 				}
 
