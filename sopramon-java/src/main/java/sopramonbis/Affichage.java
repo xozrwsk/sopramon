@@ -28,6 +28,7 @@ import sopramonbis.model.Utilisateur;
 
 public class Affichage {
 
+//	private static final String else if = null;
 	@Autowired
 	private IDAOSopramon daoSopramon;
 	@Autowired
@@ -47,9 +48,9 @@ public class Affichage {
 
 	public void choix() {
 
-		System.out.println("°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°");
+		System.out.println("ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½");
 		System.out.println("           BIENVENUE A SOPRAGAMING         ");
-		System.out.println("°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°~~°");
+		System.out.println("ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½");
 
 		System.out.println("   --> Se connecter \nSaisir l'identifiant utilisateur : ");
 		String u = lireChaine();
@@ -110,6 +111,78 @@ public class Affichage {
 			}
 
 		}
+
+	}
+
+	public void supprimerItem() {
+
+		System.out.println("Choisir l'item a supprimer :");
+
+		List<Item> items = daoItem.findAll();
+		Item item = null;
+
+		for (int i = 0; i < items.size(); i++) {
+			System.out.println("Item " + i + ": " + items.get(i).getNom());
+		}
+
+		int z = lireEntier();
+		item = items.get(z);
+
+		daoItem.delete(item);
+
+	}
+
+	public void modifierItem() {
+
+		System.out.println("Choisir l'item a modifier :");
+
+		List<Item> items = daoItem.findAll();
+		Item item = null;
+
+		for (int i = 0; i < items.size(); i++) {
+			System.out.println("Item " + i + ": " + items.get(i).getNom());
+		}
+
+		int z = lireEntier();
+		item = items.get(z);
+
+		System.out.println("Modifier nom de l'item :");
+		String a = lireChaine();
+		item.setNom(a);
+
+		System.out.println("Modifier prix de l'item :");
+		int b = lireEntier();
+		item.setPrix(b);
+
+		System.out.println("Modifier description de l'item :");
+		String c = lireChaine();
+		item.setDescription(c);
+
+		System.out.println("Modifier caracteristique d'attaque :");
+		int d = lireEntier();
+		item.setAttaque(d);
+
+		System.out.println("Modifier caracteristique de defense :");
+		int e = lireEntier();
+		item.setDefense(e);
+
+		System.out.println("Modifier caracteristique de vitesse :");
+		int f = lireEntier();
+		item.setVitesse(f);
+
+		System.out.println("Modifier caracteristique d'esquive :");
+		int g = lireEntier();
+		item.setEsquive(g);
+
+		daoItem.save(item);
+
+		System.out.println("Nom : " + a);
+		System.out.println("Prix : " + b);
+		System.out.println("Description : " + c);
+		System.out.println("Attaque : " + d);
+		System.out.println("Defense : " + e);
+		System.out.println("Vitesse : " + f);
+		System.out.println("Esquive : " + g);
 
 	}
 
