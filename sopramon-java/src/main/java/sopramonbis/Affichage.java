@@ -114,78 +114,6 @@ public class Affichage {
 
 	}
 
-	public void supprimerItem() {
-
-		System.out.println("Choisir l'item a supprimer :");
-
-		List<Item> items = daoItem.findAll();
-		Item item = null;
-
-		for (int i = 0; i < items.size(); i++) {
-			System.out.println("Item " + i + ": " + items.get(i).getNom());
-		}
-
-		int z = lireEntier();
-		item = items.get(z);
-
-		daoItem.delete(item);
-
-	}
-
-	public void modifierItem() {
-
-		System.out.println("Choisir l'item a modifier :");
-
-		List<Item> items = daoItem.findAll();
-		Item item = null;
-
-		for (int i = 0; i < items.size(); i++) {
-			System.out.println("Item " + i + ": " + items.get(i).getNom());
-		}
-
-		int z = lireEntier();
-		item = items.get(z);
-
-		System.out.println("Modifier nom de l'item :");
-		String a = lireChaine();
-		item.setNom(a);
-
-		System.out.println("Modifier prix de l'item :");
-		int b = lireEntier();
-		item.setPrix(b);
-
-		System.out.println("Modifier description de l'item :");
-		String c = lireChaine();
-		item.setDescription(c);
-
-		System.out.println("Modifier caracteristique d'attaque :");
-		int d = lireEntier();
-		item.setAttaque(d);
-
-		System.out.println("Modifier caracteristique de defense :");
-		int e = lireEntier();
-		item.setDefense(e);
-
-		System.out.println("Modifier caracteristique de vitesse :");
-		int f = lireEntier();
-		item.setVitesse(f);
-
-		System.out.println("Modifier caracteristique d'esquive :");
-		int g = lireEntier();
-		item.setEsquive(g);
-
-		daoItem.save(item);
-
-		System.out.println("Nom : " + a);
-		System.out.println("Prix : " + b);
-		System.out.println("Description : " + c);
-		System.out.println("Attaque : " + d);
-		System.out.println("Defense : " + e);
-		System.out.println("Vitesse : " + f);
-		System.out.println("Esquive : " + g);
-
-	}
-
 	public void findAll() {
 
 		for (Sopramon s : daoSopramon.findAll()) {
@@ -265,38 +193,42 @@ public class Affichage {
 			if (n == 1) {
 				try {
 					while (bossvie > 0 && sopvie > 0) {
-						Coup nouveauCoup = new Coup();
-						nouveauCoup.setSopramon(nouveauSopramon);
-						nouveauCoup.setBoss(nouveauBoss);
+
+						Coup coupSop = new Coup();
+						coupSop.setSopramon(nouveauSopramon);
+						coupSop.setBoss(nouveauBoss);
 
 						System.out.println("C'est : " + s.get().getNom() + " qui attaque");
-						// tant que la vie du boss est > 0 : la vie du boss diminue de l'attaque du
-						// Sopramon.
-						// les points de vie du boss changent (-50pts)
 						bossvie = b.get().getCapacite().getPointDeVie() - s.get().getCapacite().getAttaque();
 						b.get().getCapacite().setPointDeVie(bossvie);
 						System.out.println("Points de vie restants de : " + b.get().getNom() + " " + bossvie);
 
 						int degats = s.get().getCapacite().getAttaque();
-						nouveauCoup.setDegats(degats);
-						nouveauCoup.getSopramon().setId(a);
-						nouveauCoup.getSopramon().setId(1);
-						nouveauCoup.setCombat(nouveauCombat);
-						nouveauCoup.setDate(new Date());
-						daoCoup.save(nouveauCoup);
+						coupSop.setDegats(degats);
+						coupSop.getSopramon().setId(a);
+						coupSop.getSopramon().setId(1);
+						coupSop.setCombat(nouveauCombat);
+						coupSop.setDate(new Date());
+
+						daoCoup.save(coupSop);
+
+						Coup coupBoss = new Coup();
+						coupBoss.setSopramon(nouveauSopramon);
+						coupBoss.setBoss(nouveauBoss);
 
 						System.out.println("C'est : " + b.get().getNom() + " qui attaque");
 						sopvie = s.get().getCapacite().getPointDeVie() - b.get().getCapacite().getAttaque();
 						s.get().getCapacite().setPointDeVie(sopvie);
 						System.out.println("Points de vie restants : " + s.get().getNom() + " " + sopvie);
 
-						int degatb = s.get().getCapacite().getAttaque();
-						nouveauCoup.setDegats(degatb);
-						nouveauCoup.getSopramon().setId(a);
-						nouveauCoup.getSopramon().setId(1);
-						nouveauCoup.setCombat(nouveauCombat);
-						nouveauCoup.setDate(new Date());
-						daoCoup.save(nouveauCoup);
+						int degatb = b.get().getCapacite().getAttaque();
+						coupBoss.setDegats(degatb);
+						coupBoss.getSopramon().setId(a);
+						coupBoss.getSopramon().setId(1);
+						coupBoss.setCombat(nouveauCombat);
+						coupBoss.setDate(new Date());
+
+						daoCoup.save(coupBoss);
 					}
 				} catch (Exception z) {
 					z.printStackTrace();
@@ -306,26 +238,28 @@ public class Affichage {
 			else if (n == 0) {
 				try {
 					while (bossvie > 0 && sopvie > 0) {
-						Coup nouveauCoup = new Coup();
-						nouveauCoup.setSopramon(nouveauSopramon);
-						nouveauCoup.setBoss(nouveauBoss);
+
+						Coup coupBoss = new Coup();
+						coupBoss.setSopramon(nouveauSopramon);
+						coupBoss.setBoss(nouveauBoss);
 
 						System.out.println("C'est : " + b.get().getNom() + " qui attaque");
-						// tant que la vie du sopramon est > 0 : la vie du sopramon diminue de l'attaque
-						// du Sopramon.
-						// les points de vie du sopramon changent (-50pts)
-						// on enregistre le coup.
 						bossvie = s.get().getCapacite().getPointDeVie() - b.get().getCapacite().getAttaque();
 						System.out.println("Points de vie restants : " + s.get().getNom() + " " + bossvie);
 						s.get().getCapacite().setPointDeVie(bossvie);
 
 						int degatb = b.get().getCapacite().getAttaque();
-						nouveauCoup.setDegats(degatb);
-						nouveauCoup.getSopramon().setId(a);
-						nouveauCoup.getSopramon().setId(1);
-						nouveauCoup.setCombat(nouveauCombat);
-						nouveauCoup.setDate(new Date());
-						daoCoup.save(nouveauCoup);
+						coupBoss.setDegats(degatb);
+						coupBoss.getSopramon().setId(a);
+						coupBoss.getSopramon().setId(1);
+						coupBoss.setCombat(nouveauCombat);
+						coupBoss.setDate(new Date());
+
+						daoCoup.save(coupBoss);
+
+						Coup coupSop = new Coup();
+						coupSop.setSopramon(nouveauSopramon);
+						coupSop.setBoss(nouveauBoss);
 
 						System.out.println("C'est : " + s.get().getNom() + " qui attaque");
 						sopvie = b.get().getCapacite().getPointDeVie() - s.get().getCapacite().getAttaque();
@@ -333,12 +267,14 @@ public class Affichage {
 						System.out.println("Points de vie restants de : " + b.get().getNom() + " " + sopvie);
 
 						int degats = s.get().getCapacite().getAttaque();
-						nouveauCoup.setDegats(degats);
-						nouveauCoup.getSopramon().setId(a);
-						nouveauCoup.getSopramon().setId(1);
-						nouveauCoup.setCombat(nouveauCombat);
-						nouveauCoup.setDate(new Date());
-						daoCoup.save(nouveauCoup);
+						coupSop.setDegats(degats);
+						coupSop.getSopramon().setId(a);
+						coupSop.getSopramon().setId(1);
+						coupSop.setCombat(nouveauCombat);
+						coupSop.setDate(new Date());
+
+						daoCoup.save(coupSop);
+
 					}
 				}
 
