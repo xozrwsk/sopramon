@@ -49,7 +49,7 @@ public class Affichage {
 	public void choix() {
 
 		System.out.println("ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½");
-		System.out.println("           BIENVENUE A SOPRAGAMING         ");
+		System.out.println("                        BIENVENUE A SOPRAGAMING                          ");
 		System.out.println("ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½~~ï¿½");
 
 		System.out.println("   --> Se connecter \nSaisir l'identifiant utilisateur : ");
@@ -275,6 +275,16 @@ public class Affichage {
 
 						daoCoup.save(coupSop);
 
+					}
+					//bug
+					if (bossvie == 0 && sopvie > 0) {
+					System.out.println("Le combat est terminé " + b.get().getNom() + " a perdu");
+					}
+					else if (sopvie == 0 && bossvie > 0) {
+					System.out.println("Le combat est terminé " + s.get().getNom() + " a perdu");
+					}
+					else if (sopvie == 0 && bossvie == 0) {
+					System.out.println("MATCH NUL!");
 					}
 				}
 
