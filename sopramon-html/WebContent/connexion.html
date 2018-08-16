@@ -5,6 +5,10 @@
 <meta name="connexion" content="Sopramon Connexion" />
 <link rel="stylesheet" type="text/css" href="mef.css" />
 <link rel="stylesheet" type="text/css" href="anim.css" />
+<link rel="stylesheet"
+integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+crossorigin="anonymous"
+href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
 <!--  --><script src="script.js"></script>
 <meta charset="UTF-8" />
 <base href="/sopramon-html/" />
@@ -18,13 +22,26 @@
 
 
 	<header>
-		<h1>  ------------------------- Se connecter -------------------------  </h1>
+		<h1>  --------- Se connecter ---------  </h1>
 		
 	</header>
 	
-
-	<label id = "ball1"> Username : </label> <input type="text"
-									name="nom" placeholder="Saisir l'username " />
+									
+<form>
+ <div class="form-group">
+    <label for="exampleInputUsername1">Username</label>
+    <input type="username" class="form-control" id="exampleInputUsername1" placeholder="Username" width="30px">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" width="30px">
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
 
 
 

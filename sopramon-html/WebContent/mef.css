@@ -14,14 +14,24 @@ background-repeat:no-repeat;
 }
 
 label#ball1{
-	color : white;
-	margin-left:100px; 
+color : white;
+margin-left:100px; 
 background-image:url(ball1.jpg); 
 background-repeat:no-repeat;
 }
+
 
 header {
 	color : white;
 	margin-left:100px; 
 }
 
+label {
+	color : white;
+margin-left:50px; 
+}
+
+form{
+	width:300px;
+	margin-left:50px;
+}
