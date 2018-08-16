@@ -13,6 +13,21 @@ background-image:url(sopramon.jpg);
 background-repeat:no-repeat;
 }
 
+body#menu{
+background-image:url(menu.jpg); 
+background-repeat:no-repeat;
+}
+
+body#inscription{
+background-image:url(inscription.jpg); 
+background-repeat:no-repeat;
+}
+
+body#admin{
+background-image:url(admin.jpg); 
+background-repeat:no-repeat;
+}
+
 label#ball1{
 color : white;
 margin-left:100px; 
