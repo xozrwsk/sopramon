@@ -1,5 +1,5 @@
 body#connexion{
-background-image:url(connexion.jpg); 
+background-image:url(connexion.jpg);
 background-repeat:no-repeat;
 font-family : Comic Sans MS, cursive;
 }
@@ -41,6 +41,9 @@ background-image:url(ball1.jpg);
 background-repeat:no-repeat;
 }
 
+p {
+	color: white;
+}
 
 header {
 	color : white;

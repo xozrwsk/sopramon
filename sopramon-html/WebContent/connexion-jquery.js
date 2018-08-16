@@ -1,46 +1,29 @@
 
-function addConnexion(){
-	
+function appenConnexion() {
 	let myConnexion = {
-			usernameCo: $('input[name="usernameCo"]').val(),
-			passwordCo: $('input[name="passwordCo"]').val(),
-			};
-	$.ajax({
-		  type: "POST",
-		  url: 'http://192.168.1.100:8080/sopramon-web/api/auth',
-		  contentType: 'application/json',
-		  data: JSON.stringify(myConnexion),
-			  success: function(connexion) {
-			  appendConnexion(connexion);
-				
-		  }
-			
-});
-}
+		usernameCo: $('input[name="usernameCo"]').val(),
+		passwordCo: $('input[name="passwordCo"]').val(),
+	};
+	};
 
-	function appendConnexion(connexion){
+function addConnexion(){
 
-		let myRow = $("<tr />");
-		let myColusername = $("<td />");
-		let myColpassword = $("<td />");
-		
-				
-		 myColusername.html(connexion.usernameCo);
-		 myColpassword.html(connexion.passwordCo);
-				 
-				 
-		 myRow.append(myColusername);
-		 myRow.append(myColpassword);
-				 		 		
-		 $('#connexion tbody').append(myRow);
+$('sumbit').bind('click', function() {
+$.ajax({
+	method: 'POST',
+	url: 'http://192.168.1.100:8080/sopramon-web/api/auth',
+	 type : "POST",
+	data: {
+	attr: 'usernameCo',
+	attr2: 'passwordCo'
+	},
+	success: function(myConnexion) {
+		console.log(myConnexion);
+		 
+		alert("Vous êtes bien connecté" + usernameCo); 
 	}
-	
-
-
-	$('form').bind('submit', function() {
-		addConnexion();
-		return false;
 	});
-	
+});
+}	
 
-	
+
