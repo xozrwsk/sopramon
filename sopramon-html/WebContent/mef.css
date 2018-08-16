@@ -1,0 +1,27 @@
+body#connexion{
+background-image:url(connexion.jpg); 
+background-repeat:no-repeat;
+}
+
+body#acces{
+background-image:url(acces.jpg); 
+background-repeat:no-repeat;
+}
+
+body#sopramon{
+background-image:url(sopramon.jpg); 
+background-repeat:no-repeat;
+}
+
+label#ball1{
+	color : white;
+	margin-left:100px; 
+background-image:url(ball1.jpg); 
+background-repeat:no-repeat;
+}
+
+header {
+	color : white;
+	margin-left:100px; 
+}
+
