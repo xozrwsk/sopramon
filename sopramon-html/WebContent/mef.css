@@ -7,26 +7,31 @@ font-family : Comic Sans MS, cursive;
 body#acces{
 background-image:url(acces.jpg); 
 background-repeat:no-repeat;
+font-family : Comic Sans MS, cursive;
 }
 
 body#sopramon{
 background-image:url(sopramon.jpg); 
 background-repeat:no-repeat;
+font-family : Comic Sans MS, cursive;
 }
 
 body#menu{
 background-image:url(menu.jpg); 
 background-repeat:no-repeat;
+font-family : Comic Sans MS, cursive;
 }
 
 body#inscription{
 background-image:url(inscription.jpg); 
 background-repeat:no-repeat;
+font-family : Comic Sans MS, cursive;
 }
 
 body#admin{
 background-image:url(admin.jpg); 
 background-repeat:no-repeat;
+font-family : Comic Sans MS, cursive;
 }
 
 label#ball1{
@@ -40,8 +45,10 @@ background-repeat:no-repeat;
 header {
 	color : white;
 	margin-left:150px; 
+	font-size: 30px;
 	
 }
+
 
 label {
 	color : white;
@@ -58,3 +65,26 @@ img {
 	height:70px;
 	width:70px;
 }
+
+img {
+	height:70px;
+	width:70px;
+}
+
+li{
+	font-size: 65px;
+	margin-left:100px;
+}
+
+a{
+	color : white;
+}
+
+.lien1 {
+float:left;
+
+}
+.lien2 {
+float:left;
+}
+
