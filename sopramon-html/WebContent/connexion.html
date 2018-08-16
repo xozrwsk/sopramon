@@ -10,7 +10,6 @@
 	crossorigin="anonymous"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
 <!--  -->
-<script src="script.js"></script>
 <meta charset="UTF-8" />
 <base href="/sopramon-html/" />
 </head>
@@ -24,11 +23,11 @@
 	</header>
 
 
-	<form method="POST">
+	<form method="GET">
 		<div id="usernameCo">
 			<img src="ball1.jpg" alt="" /> <label for="usernameCo">Username</label>
 			<input type="text" id="usernameCo"
-				name="usernameCo" placeholder="Username" width="30px">
+				name="usernameCo" placeholder="Username" width="30px" required>
 		</div>
 		<div id="passwordCo">
 			<img src="ball3.jpg" alt="" /> <label for="passwordCo">Password</label>
@@ -36,7 +35,9 @@
 				name="passwordCo" placeholder="Password" width="30px">
 		</div>
 
-	<input type="submit" name="connexion" value="Connexion" onclick="addConnexion(); return false;" />
+	<p></p>
+	<button type="submit" name="connexion" class="btn btn-primary" value="Connexion">Connexion</button>
+	
 		
 </form>
 
