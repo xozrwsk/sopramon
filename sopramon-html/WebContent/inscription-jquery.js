@@ -14,9 +14,12 @@ $('form').bind('submit', function() {
 		success : function(mySopramon) {
 			console.log(mySopramon);
 			alert("Vous êtes bien inscrit" + username);
+			document.location.href = "connexion.html";
 		}
 
 	});
 	
 	return false;
 });
+
+
