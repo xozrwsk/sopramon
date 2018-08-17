@@ -14,9 +14,8 @@ $('form').bind('submit', function() {
 
 		success : function(myConnexion) {
 			console.log(myConnexion);
-
-			alert("Vous êtes bien connecté" + username);
-
+			alert("Vous êtes bien connecté");
+			document.location.href = "acces.html";
 		}
 	});
 
