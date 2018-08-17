@@ -37,15 +37,20 @@ $.ajax({
 	}
 });
 
-//charger les sopramons
+// charger les sopramons
 $('button.btn-load').bind('click', function(){
+
+
 $.ajax({
 	method: 'GET',
 	url: 'http://192.168.1.100:8080/sopramon-web/api/sopramons',
 	success: function(sopramons) {
 		console.log(sopramons);
+		//suppression des lignes
+		$('tbody tr').remove();
 		
-		// ajout de chaque sopramon
+		
+		//ajout de chaque sopramon
 		for (let sopramon of sopramons){
 			appendSopramon(sopramon);
 		}
@@ -53,23 +58,3 @@ $.ajax({
 })
 
 });
-
-//let mySopramon = {
-//	id : $('input[name="id"]').val(),
-//	nom : $('input[name="nom"]').val(),
-//	prenom : $('input[name="prenom"]').val(),
-//	username : $('input[name="username"]').val(),
-//	password : $('input[name="password"]').val(),
-//	dateNaissance : $('input[name="dateNaissance"]').val(),
-//	signe : $('input[name="signe"]').val(),
-//	experience : $('input[name="experience"]').val(),
-//	niveau : $('input[name="niveau"]').val(),
-//	argent : $('input[name="argent"]').val()
-//};
-//
-//$.ajax({
-//	method : 'GET',
-//	url : 'http://192.168.1.100:8080/sopramon-web/api/sopramons',
-//	contentType : 'application/json',
-//	data : JSON.stringify(mySopramon)
-//});

@@ -20,26 +20,28 @@
 
 	<form>
 		<div class="form-group">
-			<label for="exampleInputEmail1">Nom</label> <input type="nom"
-				class="form-control" id="nom" aria-describedby="emailHelp"
-				placeholder="Entrer nom">
+			<label for="nom">Nom</label> <input name="nom" type="text" class="form-control"
+				id="nom" aria-describedby="emailHelp" placeholder="Entrer nom">
 		</div>
 		<div class="form-group">
-			<label for="exampleInputPassword1">Prénom</label> <input
-				type="prenom" class="form-control" id="prenom"
-				placeholder="Entrer prénom">
+			<label for="prenom">Prénom</label> <input name="prenom" type="text"
+				class="form-control" id="prenom" placeholder="Entrer prénom">
 		</div>
 		<div class="form-group">
-			<label for="exampleInputPassword1">Username</label> <input
-				type="username" class="form-control" id="username"
-				placeholder="Entrer username">
+			<label for="username">Username</label> <input name="username" type="text"
+				class="form-control" id="username" placeholder="Entrer username">
 		</div>
 		<div class="form-group">
-			<label for="exampleInputPassword1">Mot de passe</label> <input
-				type="password" class="form-control" id="password"
-				placeholder="Entrer mot de passe">
+			<label for="password">Mot de passe</label> <input name="password" type="text"
+				class="form-control" id="password" placeholder="Entrer mot de passe">
 		</div>
-		<button type="submit" class="btn btn-primary" href="acces">S'inscrire</button>
+
+		<div class="form-group">
+			<label for="date">Mot de passe</label> <input name="dateNaissance" type="date"
+				class="form-control" id="date"
+				placeholder="Entrer date de naissance">
+		</div>
+		<button type="submit" class="btn btn-primary">S'inscrire</button>
 	</form>
 
 	<script src="jquery-3.3.1.min.js"></script>
@@ -47,9 +49,14 @@
 
 
 	<footer>
-<a href="javascript:history.go(-1)">Retour</a>
-</footer>
+		<a href="javascript:history.go(-1)">Retour</a>
+	</footer>
 
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="inscription-jquery.js"></script>
+	<script src="jquery-3.3.1.min.js"></script>
+	<script src="navigation.js"></script>
 
 </body>
 </html>
