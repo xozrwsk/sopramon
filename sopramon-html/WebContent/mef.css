@@ -45,7 +45,7 @@ p {
 	color: white;
 }
 
-header {
+h1 {
 	color : white;
 	margin-left:150px; 
 	font-size: 30px;
@@ -55,7 +55,12 @@ header {
 footer {
 	position: absolute;
 	bottom: 0;
-	position: fixed width: 100%
+	position: fixed width: 100%;
+color: white;
+}
+
+footer a{
+color: white;
 }
 
 label {
@@ -74,18 +79,11 @@ img {
 	width:70px;
 }
 
-img {
-	height:70px;
-	width:70px;
-}
-
 li{
-	font-size: 65px;
-	margin-left:100px;
-}
-
-a{
+	font-size: 50px;
+	margin-left:60px;
 	color : white;
+	list-style : none;
 }
 
 .lien1 {
