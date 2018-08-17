@@ -1,3 +1,7 @@
+body{
+background-color:black;
+}
+
 body#connexion{
 background-image:url(connexion.jpg);
 background-repeat:no-repeat;
@@ -28,6 +32,7 @@ background-image:url(pokecenter.jpg);
 background-repeat:no-repeat;
 background-size: 100%;
 font-family : 'Indie Flower', cursive;
+
 }
 
 body#menu{
@@ -129,7 +134,7 @@ float:left;
 
 donjon {
 	position: absolute;
-	margin-top:470px;
+	margin-top:350px;
 	margin-left:870px;
 	filter:alpha(opacity=50);
 	-moz-opacity:0.5;
@@ -160,7 +165,7 @@ cacher {
 
 versus {
 	position: absolute;
-	margin-top:370px;
+	margin-top:250px;
 	margin-left:100px;
 	filter:alpha(opacity=50);
 	-moz-opacity:0.5;
@@ -176,7 +181,7 @@ versus {
 
 magasin {
 	position: absolute;
-	margin-top:190px;
+	margin-top:70px;
 	margin-left:620px;
 	filter:alpha(opacity=50);
 	-moz-opacity:0.5;
@@ -198,8 +203,10 @@ div#donjonimg{
 }
 
 div#donjonimg img {
-height:105%;
-width:105%;
+height:85%;
+width:85%;
+ border: solid 4px black;
+
 }
 
 div#versusimg{
@@ -209,9 +216,21 @@ div#versusimg{
 	}
 
 div#versusimg img {
-height:94%;
-width:94%;
+height:75%;
+width:75%;
+border: solid 4px black;
 }
+
+div#sop{
+	background-size: 70%;
+	text-align: left;
+	}
+
+div#sop img {
+height:initial;
+width:initial;
+}
+
 
 
 
