@@ -1,50 +1,51 @@
 body#connexion{
 background-image:url(connexion.jpg);
 background-repeat:no-repeat;
-font-family : Comic Sans MS, cursive;
+font-family :'Indie Flower', cursive;
 }
 
 body#icombat{
 background-image:url(terre.jpg);
 background-repeat:no-repeat;
 background-size: 70%;
-font-family : Comic Sans MS, cursive;
+font-family : 'Indie Flower', cursive;
 }
 
 body#acces{
 background-image:url(acces.jpg); 
 background-repeat:no-repeat;
-font-family : Comic Sans MS, cursive;
+font-family : 'Indie Flower', cursive;
 }
 
 body#sopramon{
 background-image:url(sopramon.jpg); 
 background-repeat:no-repeat;
-font-family : Comic Sans MS, cursive;
+font-family : 'Indie Flower', cursive;
 }
 
 body#achatitem{
-background-image:url(sopramon.jpg); 
+background-image:url(pokecenter.jpg); 
 background-repeat:no-repeat;
-font-family : Comic Sans MS, cursive;
+background-size: 100%;
+font-family : 'Indie Flower', cursive;
 }
 
 body#menu{
 background-image:url(menu.jpg); 
 background-repeat:no-repeat;
-font-family : Comic Sans MS, cursive;
+font-family : 'Indie Flower', cursive;
 }
 
 body#inscription{
 background-image:url(inscription.jpg); 
 background-repeat:no-repeat;
-font-family : Comic Sans MS, cursive;
+font-family : 'Indie Flower', cursive;
 }
 
 body#admin{
 background-image:url(admin.jpg); 
 background-repeat:no-repeat;
-font-family : Comic Sans MS, cursive;
+font-family : 'Indie Flower', cursive;
 }
 
 label#ball1{
@@ -59,10 +60,11 @@ p {
 }
 
 h1 {
-		margin-top:50px;
+	margin-top:50px;
 	color : white;
 	margin-left:150px; 
-	font-size: 30px;
+	font-size: 50px;
+	text-decoration: underline;
 }
 
 tr {
@@ -85,17 +87,18 @@ color: white;
 footer a{
 color: red;
 font-size : 20px;
+text-decoration: underline overline #FF3028;
 }
 
 label {
 	color : white;
-margin-left:50px; 
+margin-left:30px; 
 }
 
 form{
-	width:300px;
+	width:500px;
 	margin-top:100px;
-	margin-left:200px;
+	margin-left:150px;
 }
 
 img {
@@ -127,7 +130,7 @@ float:left;
 donjon {
 	position: absolute;
 	margin-top:470px;
-	margin-left:850px;
+	margin-left:870px;
 	filter:alpha(opacity=50);
 	-moz-opacity:0.5;
 	opacity: 0.5;
@@ -158,7 +161,7 @@ cacher {
 versus {
 	position: absolute;
 	margin-top:370px;
-	margin-left:95px;
+	margin-left:100px;
 	filter:alpha(opacity=50);
 	-moz-opacity:0.5;
 	opacity: 0.5;
@@ -174,7 +177,7 @@ versus {
 magasin {
 	position: absolute;
 	margin-top:190px;
-	margin-left:600px;
+	margin-left:620px;
 	filter:alpha(opacity=50);
 	-moz-opacity:0.5;
 	opacity: 0.5;
@@ -195,8 +198,8 @@ div#donjonimg{
 }
 
 div#donjonimg img {
-height:100%;
-	width:100%;
+height:105%;
+	width:105%;
 }
 
 div#versusimg{
@@ -206,8 +209,8 @@ div#versusimg{
 	}
 
 div#versusimg img {
-height:100%;
-	width:100%;
+height:94%;
+	width:94%;
 }
 
 
