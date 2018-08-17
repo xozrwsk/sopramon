@@ -4,6 +4,13 @@ background-repeat:no-repeat;
 font-family : Comic Sans MS, cursive;
 }
 
+body#icombat{
+background-image:url(terre.jpg);
+background-repeat:no-repeat;
+background-size: 70%;
+font-family : Comic Sans MS, cursive;
+}
+
 body#acces{
 background-image:url(acces.jpg); 
 background-repeat:no-repeat;
@@ -11,6 +18,12 @@ font-family : Comic Sans MS, cursive;
 }
 
 body#sopramon{
+background-image:url(sopramon.jpg); 
+background-repeat:no-repeat;
+font-family : Comic Sans MS, cursive;
+}
+
+body#achatitem{
 background-image:url(sopramon.jpg); 
 background-repeat:no-repeat;
 font-family : Comic Sans MS, cursive;
@@ -50,7 +63,15 @@ h1 {
 	color : white;
 	margin-left:150px; 
 	font-size: 30px;
-	
+}
+
+tr {
+color: white;
+}
+
+table {
+width: 50%;
+height: 160px;
 }
 
 footer {
