@@ -46,6 +46,7 @@ p {
 }
 
 h1 {
+		margin-top:50px;
 	color : white;
 	margin-left:150px; 
 	font-size: 30px;
@@ -60,7 +61,8 @@ color: white;
 }
 
 footer a{
-color: white;
+color: red;
+font-size : 20px;
 }
 
 label {
@@ -84,6 +86,12 @@ li{
 	margin-left:60px;
 	color : white;
 	list-style : none;
+}
+
+a{
+	margin-top:100px;
+	color : white;
+	font-size: 35px;
 }
 
 .lien1 {
