@@ -43,7 +43,7 @@
 
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>ewavy.AppConfig</param-value>
+		<param-value>sopramon.AppConfig</param-value>
 	</context-param>
 
 </web-app>
