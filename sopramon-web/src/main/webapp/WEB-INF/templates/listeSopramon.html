@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout.html">
 <head>
 <title>Liste des Sopramon</title>
 <meta name="ListeSopramon" content="ListeSopramon" />
@@ -27,24 +29,18 @@
 
 	<table id="sopramons">
 		<thead>
-			<tr>
-				<th>Nom</th>
-				<th>Date de naissance</th>
-				<th>Expérience</th>
-				<th>Niveau</th>
-				<th>Argent</th>
+			<tr th:each="sopramon : ${ sopramons }">
+				<th>[[${ sopramon.nom }]]</th>
+				<th>[[${ sopramon.dateNaissance }]]</th>
+				<th>[[${ sopramon.experience }]]</th>
+				<th>[[${ sopramon.niveau }]]</th>
+				<th>[[${ sopramon.argent }]]</th>
 			</tr>
 		</thead>
 		<tbody>
 
 		</tbody>
 	</table>
-
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="listeSopramon-jquery.js"></script>
-	<script src="jquery-3.3.1.min.js"></script>
-	<script src="navigation.js"></script>
 
 </body>
 
