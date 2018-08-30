@@ -18,10 +18,10 @@ import nz.net.ultraq.thymeleaf.LayoutDialect;
 @ComponentScan("controller")
 @EnableWebMvc
 public class WebConfig implements WebMvcConfigurer {
-//	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-//		registry.addResourceHandler("/css/**").addResourceLocations("/css/");
-//		registry.addResourceHandler("/images/**").addResourceLocations("/images/");
-//	}
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry.addResourceHandler("/css/**").addResourceLocations("/css/");
+		registry.addResourceHandler("/images/**").addResourceLocations("/images/");
+	}
 
 	@Bean
 	public UrlBasedViewResolver viewResolver() {

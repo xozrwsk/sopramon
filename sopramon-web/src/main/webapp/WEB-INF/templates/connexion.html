@@ -8,29 +8,28 @@
 </head>
 
 <body id="connexion">
-	<div layout:fragment="custom-content">
-	<div layout:fragment="sop">
-
 
 	<header>
 		<h1>SE CONNECTER</h1>
 	</header>
 
+<section layout:fragment="custom-content">
 
 	<form method="GET">
 		<div id="usernameCo">
-			<img src="ball1.jpg" alt="" /> <label for="usernameCo">Identifiant</label>
-			<input type="text" id="usernameCo" name="usernameCo"
-				placeholder="Username" width="30px" required>
+		<img src="ball1.jpg" alt="" /> 
+			<label for="usernameCo">Identifiant</label>
+			<input type="text" id="usernameCo" name="usernameCo" th:value="${ usernameCo? }" placeholder="Username" width="30px" required>
 		</div>
 		<div id="passwordCo">
-			<img src="ball3.jpg" alt="" /> <label for="passwordCo">Mot
-				de passe</label> <input type="password" id="passwordCo" name="passwordCo"
-				placeholder="Password" width="30px">
+			<img src="ball3.jpg" alt="" /> 
+			<label for="passwordCo">Mot de passe</label> 
+			<input type="password" id="passwordCo" name="passwordCo" th:value="${ passwordCo? }"  placeholder="Password" width="30px">
 		</div>
 
-		<p></p>
-		<button type="submit" name="connexion" class="btn btn-primary"
+		
+
+		<button type="submit" name="connexion" class="btn btn-warning"
 			value="Connexion">Connexion</button>
 
 
