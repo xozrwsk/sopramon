@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout.html">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h1 layout:fragment="custom-title">Liste des produits</h1>
+
+	<div  layout:fragment="custom-content">
+	<table>
+		<tr th:each="produit : ${ produits }">
+			<td>[[${ produit.nom }]]</td>
+			<td>[[${ produit.prix }]]</td>
+			<td>[[${ produit.gamme.nom }]]</td>
+			<td><a th:href="@{editerProduit(id=${ produit.id})}"
+				type="button" class="btn-load">Editer</a></td>
+			<td><a th:href="@{supprimerProduit(id=${ produit.id})}"
+				type="button" class="btn-clear">Supprimer</a></td>
+		</tr>
+	</table>
+	
+	<button class="btn-add">
+		<a href="ajouterProduit">Ajouter</a>
+	</button>
+	</div>
+	
+	<footer layout:fragment="custom-footer">
+		<p>Nouveau footer pour cette page</p>
+	</footer>
+</body>
+</html>

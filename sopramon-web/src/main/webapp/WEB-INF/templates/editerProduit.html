@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form method="POST">
+		<div class="form-group">
+			<label for="exampleInputNom">Nom produit :</label> <input type="text"
+				class="form-control" id="nom" name="nom" th:value="${ produit.nom }">
+		</div>
+		<div class="form-group">
+			<label for="exampleInputPrix">Prix produit :</label> <input
+				type="text" class="form-control" id="prix" name="prix"
+				th:value="${ produit.prix }">
+		</div>
+		<div>
+			<label>Gamme produit :</label> <select name="gamme_id">
+				<option value="1" selected>Gamme1</option>
+				<option value="2">Gamme2</option>
+				<option value="3">Gamme3</option>
+			</select>
+		</div>
+		<button type="submit" class="btn btn-primary">Editer</button>
+	</form>
+</body>
+</html>

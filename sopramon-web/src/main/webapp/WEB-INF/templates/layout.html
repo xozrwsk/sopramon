@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8" />
+<base href="/ewavy-web/" />
+<title layout:title-pattern="$LAYOUT_TITLE -$CONTENT_TITLE">Formation
+	Servlet</title>
+<link rel="stylesheet" href="resources/assets/css/le-style-general.css" />
+</head>
+<body>
+	<header>
+		<h1 layout:fragment="custom-title">Le titre par défaut</h1>
+	</header>
+
+	<section>
+		<div>MENU</div>
+		<a type="button"
+			class="btn-load" href="home">Accueil</a> 
+		<a type="button"
+			class="btn-clear" href="produit">Produit</a>
+	</section>
+
+	<section layout:fragment="custom-content">
+		<p>Le contenu par défaut</p>
+	</section>
+
+	<footer layout:fragment="custom-footer">
+		<p>Le footer par défaut</p>
+	</footer>
+</body>
+</html>
