@@ -81,20 +81,6 @@ width: 50%;
 height: 160px;
 }
 
-footer {
-	position: absolute;
-	bottom: 0;
-	margin-left:75%;
-	position: fixed width: 100%; 
-color: white;
-}
-
-footer a{
-color: red;
-font-size : 20px;
-text-decoration: underline overline #FF3028;
-}
-
 label {
 	color : white;
 margin-left:30px; 
