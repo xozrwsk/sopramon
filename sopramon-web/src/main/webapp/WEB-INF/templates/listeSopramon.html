@@ -1,38 +1,47 @@
 <!DOCTYPE html>
-<html
-    xmlns:th="http://www.thymeleaf.org"
-    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-    layout:decorator="layout.html">
-    
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout.html">
+
 <head>
-	<title>Liste des Sopramon</title>
+<title>Liste des Sopramon</title>
 </head>
 
 <body id="admin">
-<div id="sop">
-<a href="menu.html"><img src="https://fontmeme.com/permalink/180817/fe5d1bf70afecce8a969952cc773cb7d.png" alt="police-pokemon" border="0"></a>
+	<div id="sop">
+		<a href="menu.html"><img
+			src="https://fontmeme.com/permalink/180817/fe5d1bf70afecce8a969952cc773cb7d.png"
+			alt="police-pokemon" border="0"></a>
 
-	<header>
-		<h1>LISTE DES SOPRAMON</h1>
-	</header>
+		<header>
+			<h1>LISTE DES SOPRAMON</h1>
+		</header>
 
-	<button class="btn btn-primary">RAFRAICHIR</button>
+		<section layout:fragment="custom-content">
+			<button class="btn btn-primary">RAFRAICHIR</button>
 
-	<table id="sopramons">
-		<thead>
-			<tr th:each="sopramon : ${ sopramons }">
-				<th>[[${ sopramon.nom }]]</th>
-				<th>[[${ sopramon.dateNaissance }]]</th>
-				<th>[[${ sopramon.experience }]]</th>
-				<th>[[${ sopramon.niveau }]]</th>
-				<th>[[${ sopramon.argent }]]</th>
-			</tr>
-		</thead>
-		<tbody>
+			<table id="sopramons" class="table table-striped table-dark">
+				<thead>
+					<tr>
+						<th scope="col">Nom</th>
+						<th scope="col">Date naissance</th>
+						<th scope="col">Experience</th>
+						<th scope="col">Niveau</th>
+						<th scope="col">Argent</th>
+					</tr>
+				</thead>
 
-		</tbody>
-	</table>
-
+				<tbody>
+					<tr th:each="sopramon : ${ sopramons }">
+						<th>[[${ sopramon.nom }]]</th>
+						<th>[[${ sopramon.dateNaissance }]]</th>
+						<th>[[${ sopramon.experience }]]</th>
+						<th>[[${ sopramon.niveau }]]</th>
+						<th>[[${ sopramon.argent }]]</th>
+					</tr>
+				</tbody>
+			</table>
+		</section>
 </body>
 
 <footer>
