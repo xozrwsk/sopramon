@@ -1,24 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout.html">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="Combat" content="Combat" />
-<link rel="stylesheet" type="text/css" href="anim.css" />
-<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-<link rel="stylesheet"
-	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-	crossorigin="anonymous"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="mef.css" />
-<base href="/sopramon-html/" />
-<title>Combat</title>
+<title>Sopramon - Map Combat</title>
 </head>
 
 
 <body id="icombat">
-<div id="sop">
-<a href="menu.html"><img src="https://fontmeme.com/permalink/180817/fe5d1bf70afecce8a969952cc773cb7d.png" alt="police-pokemon" border="0"></a>
-</div>
+<div layout:fragment="custom-content">
+	<div layout:fragment="sop">
 
 <donjon>
 <button class="donjon" id="donjon"> Donjon </button>
@@ -53,9 +45,7 @@
 <script src="icombat-jquery.js"></script>
 
 </body>
-<footer>
-<a href="javascript:history.go(-1)">Retour</a>
-</footer>
+<footer layout:fragment="custom-footer">
 </html>
 
 

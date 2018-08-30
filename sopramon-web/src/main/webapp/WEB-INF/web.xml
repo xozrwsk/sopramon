@@ -43,7 +43,7 @@
 
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>sopramon.AppConfig</param-value>
+		<param-value>sopramonbis.AppConfig</param-value>
 	</context-param>
 
 </web-app>

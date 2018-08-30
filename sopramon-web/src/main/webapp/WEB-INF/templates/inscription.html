@@ -1,23 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout.html">
+
 <head>
-<meta charset="ISO-8859-1">
-<meta name="Inscription" content="Inscription" />
-<link rel="stylesheet" type="text/css" href="anim.css" />
-<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-<link rel="stylesheet"
-	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-	crossorigin="anonymous"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="mef.css" />
-<base href="/sopramon-html/" />
-<title>Inscription</title>
+<title>Sopramon - Inscription</title>
 </head>
 
 <body id="inscription">
-<div id="sop">
-<a href="menu.html"><img src="https://fontmeme.com/permalink/180817/fe5d1bf70afecce8a969952cc773cb7d.png" alt="police-pokemon" border="0"></a>
-</div>
+<div layout:fragment="custom-content">
+	<div layout:fragment="sop">
 
 	<header>
 		<h1>INSCRIPTION</h1>
@@ -53,9 +45,7 @@
 	<script src="navigation.js"></script>
 
 
-	<footer>
-		<a href="javascript:history.go(-1)">Retour</a>
-	</footer>
+<footer layout:fragment="custom-footer">
 
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
