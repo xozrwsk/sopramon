@@ -6,8 +6,5 @@ import sopramonbis.model.Coup;
 
 public interface IDAOCoup extends JpaRepository<Coup, Integer> {
 
-<<<<<<< Updated upstream
+
 }
-=======
-}
->>>>>>> Stashed changes
