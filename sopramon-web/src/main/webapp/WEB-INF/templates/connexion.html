@@ -14,17 +14,18 @@
 	</header>
 
 <section layout:fragment="custom-content">
-
-	<form method="GET">
+	<p th:text="${ msgerr }"></p>
+	
+	<form method="POST">
 		<div id="usernameCo">
 		<img src="ball1.jpg" alt="" /> 
 			<label for="usernameCo">Identifiant</label>
-			<input type="text" id="usernameCo" name="usernameCo" th:value="${ usernameCo? }" placeholder="Username" width="30px" required>
+			<input type="text" id="username" name="username" placeholder="Username"  width="30px" required>
 		</div>
 		<div id="passwordCo">
 			<img src="ball3.jpg" alt="" /> 
 			<label for="passwordCo">Mot de passe</label> 
-			<input type="password" id="passwordCo" name="passwordCo" th:value="${ passwordCo? }"  placeholder="Password" width="30px">
+			<input type="password" id="password" name="password" placeholder="Password"  width="30px">
 		</div>
 
 		
@@ -42,5 +43,4 @@
 	<script src="jquery-3.3.1.min.js"></script>
 	<script src="connexion-jquery.js"></script>
 </body>
-<footer layout:fragment="custom-footer">
 </html>
