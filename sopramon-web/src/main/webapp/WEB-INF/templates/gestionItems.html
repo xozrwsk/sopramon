@@ -14,47 +14,7 @@
 	</header>
 
 	<section layout:fragment="custom-content">
-		<button class="btn btn-primary">Créer item</button>
-		<button class="btn btn-primary">Modifier item</button>
-		<button class="btn btn-primary">Supprimer item</button>
-
-		<form action="">
-
-			<div>
-				<label>Nom de l'item :</label> <input class="form-control"
-					type="text" name="nom" placeholder="Saisir le nom de l'item" />
-			</div>
-			<div>
-				<label>Prix :</label> <input class="form-control" type="number"
-					name="prix" placeholder="Saisir le prix" />
-			</div>
-			<div>
-				<label>Valeur de PV :</label> <input class="form-control"
-					type="number" name="pv" placeholder="Saisir la valeur de PV" />
-			</div>
-			<div>
-				<label>Valeur d'attaque :</label> <input class="form-control"
-					type="number" name="attaque"
-					placeholder="Saisir la valeur d'attaque" />
-			</div>
-			<div>
-				<label>Valeur de défense :</label> <input class="form-control"
-					type="number" name="defense"
-					placeholder="Saisir la valeur de défense" />
-			</div>
-			<div>
-				<label>Valeur d'esquive :</label> <input class="form-control"
-					type="number" name="esquive"
-					placeholder="Saisir la valeur d'esquive" />
-			</div>
-			<div>
-				<label>Valeur de vitesse :</label> <input class="form-control"
-					type="number" name="vitesse"
-					placeholder="Saisir la valeur de vitesse" />
-			</div>
-
-		</form>
-
+		<a class="btn btn-primary" href="creerItem">Créer item</a>
 
 		<table>
 			<thead>
@@ -69,12 +29,16 @@
 			</thead>
 			<tbody>
 				<tr th:each="item : ${ items }">
-					<th>[[${ item.nom }]]</th>
-					<th>[[${ item.prix }]]</th>
-					<th>[[${ item.attaque }]]</th>
-					<th>[[${ item.defense }]]</th>
-					<th>[[${ item.esquive }]]</th>
-					<th>[[${ item.vitesse }]]</th>
+					<td>[[${ item.nom }]]</td>
+					<td>[[${ item.prix }]]</td>
+					<td>[[${ item.attaque }]]</td>
+					<td>[[${ item.defense }]]</td>
+					<td>[[${ item.esquive }]]</td>
+					<td>[[${ item.vitesse }]]</td>
+					<td><a th:href="@{modifierItem(id=${ item.id})}" type="button"
+						class="btn-load">Modifier</a></td>
+					<td><a th:href="@{supprimerItem(id=${ item.id})}"
+						type="button" class="btn-clear">Supprimer</a></td>
 				</tr>
 			</tbody>
 		</table>
