@@ -1,63 +1,62 @@
-body{
-background-color:black;
+body {
+	background-color: black;
 }
 
-body#connexion{
-background-image:url(connexion.jpg);
-background-repeat:no-repeat;
-font-family :'Indie Flower', cursive;
+body#connexion {
+	background-image: url(connexion.jpg);
+	background-repeat: no-repeat;
+	font-family: 'Indie Flower', cursive;
 }
 
-body#icombat{
-background-image:url(terre.jpg);
-background-repeat:no-repeat;
-background-size: 70%;
-font-family : 'Indie Flower', cursive;
+body#icombat {
+	background-image: url(terre.jpg);
+	background-repeat: no-repeat;
+	background-size: 70%;
+	font-family: 'Indie Flower', cursive;
 }
 
-body#acces{
-background-image:url(acces.jpg); 
-background-repeat:no-repeat;
-font-family : 'Indie Flower', cursive;
+body#acces {
+	background-image: url(acces.jpg);
+	background-repeat: no-repeat;
+	font-family: 'Indie Flower', cursive;
 }
 
-body#sopramon{
-background-image:url(sopramon.jpg); 
-background-repeat:no-repeat;
-font-family : 'Indie Flower', cursive;
+body#sopramon {
+	background-image: url(sopramon.jpg);
+	background-repeat: no-repeat;
+	font-family: 'Indie Flower', cursive;
 }
 
-body#achatitem{
-background-image:url(pokecenter.jpg); 
-background-repeat:no-repeat;
-background-size: 100%;
-font-family : 'Indie Flower', cursive;
-
+body#achatitem {
+	background-image: url(pokecenter.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	font-family: 'Indie Flower', cursive;
 }
 
-body#menu{
-background-image:url(menu.jpg); 
-background-repeat:no-repeat;
-font-family : 'Indie Flower', cursive;
+body#menu {
+	background-image: url(menu.jpg);
+	background-repeat: no-repeat;
+	font-family: 'Indie Flower', cursive;
 }
 
-body#inscription{
-background-image:url(inscription.jpg); 
-background-repeat:no-repeat;
-font-family : 'Indie Flower', cursive;
+body#inscription {
+	background-image: url(inscription.jpg);
+	background-repeat: no-repeat;
+	font-family: 'Indie Flower', cursive;
 }
 
-body#admin{
-background-image:url(admin.jpg); 
-background-repeat:no-repeat;
-font-family : 'Indie Flower', cursive;
+body#admin {
+	background-image: url(admin.jpg);
+	background-repeat: no-repeat;
+	font-family: 'Indie Flower', cursive;
 }
 
-label#ball1{
-color : white;
-margin-left:100px; 
-background-image:url(ball1.jpg); 
-background-repeat:no-repeat;
+label#ball1 {
+	color: white;
+	margin-left: 100px;
+	background-image: url(ball1.jpg);
+	background-repeat: no-repeat;
 }
 
 p {
@@ -65,158 +64,157 @@ p {
 }
 
 h1 {
-	margin-top:50px;
-	color : white;
-	margin-left:150px; 
+	margin-top: 50px;
+	color: white;
+	margin-left: 150px;
 	font-size: 50px;
 	text-decoration: underline;
 }
 
 tr {
-color: white;
+	color: white;
 }
 
 table {
-width: 50%;
-height: 160px;
+	width: 50%;
+	height: 160px;
 }
 
 label {
-	color : white;
-margin-left:30px; 
+	color: white;
+	margin-left: 30px;
 }
 
-form{
-	width:500px;
-	margin-top:100px;
-	margin-left:150px;
+form {
+	width: 500px;
+	margin-top: 100px;
+	margin-left: 150px;
 }
 
 img {
-	height:70px;
-	width:70px;
+	height: 70px;
+	width: 70px;
 }
 
-li{
+li {
 	font-size: 50px;
-	margin-left:60px;
-	color : white;
-	list-style : none;
+	margin-left: 60px;
+	color: white;
+	list-style: none;
 }
 
-a{
-	margin-top:100px;
-	color : white;
+a {
+	margin-top: 100px;
+	color: white;
 	font-size: 35px;
 }
 
 .lien1 {
-float:left;
-
+	float: left;
 }
+
 .lien2 {
-float:left;
+	float: left;
 }
 
 donjon {
 	position: absolute;
-	margin-top:350px;
-	margin-left:870px;
-	filter:alpha(opacity=50);
-	-moz-opacity:0.5;
+	margin-top: 350px;
+	margin-left: 870px;
+	filter: alpha(opacity = 50);
+	-moz-opacity: 0.5;
 	opacity: 0.5;
-	background-color:#00F;
-    border: none;
-    cursor:pointer;
-    overflow: hidden;
-    outline:none;
-    font-size: 50px;
-    border-radius: 50%;
+	background-color: #00F;
+	border: none;
+	cursor: pointer;
+	overflow: hidden;
+	outline: none;
+	font-size: 50px;
+	border-radius: 50%;
 }
 
 cacher {
 	position: absolute;
 	bottom: 0;
-	filter:alpha(opacity=50);
-	-moz-opacity:0.5;
+	filter: alpha(opacity = 50);
+	-moz-opacity: 0.5;
 	opacity: 0.8;
-	background-color:#00F;
-    border: none;
-    cursor:pointer;
-    overflow: hidden;
-    outline:none;
-    font-size: 10px;
-    border-radius: 50%;
+	background-color: #00F;
+	border: none;
+	cursor: pointer;
+	overflow: hidden;
+	outline: none;
+	font-size: 10px;
+	border-radius: 50%;
 }
 
 versus {
 	position: absolute;
-	margin-top:250px;
-	margin-left:100px;
-	filter:alpha(opacity=50);
-	-moz-opacity:0.5;
+	margin-top: 250px;
+	margin-left: 100px;
+	filter: alpha(opacity = 50);
+	-moz-opacity: 0.5;
 	opacity: 0.5;
-	background-color:#00F;
-    border: none;
-    cursor:pointer;
-    overflow: hidden;
-    outline:none;
-    font-size: 50px;
-    border-radius: 50%;
+	background-color: #00F;
+	border: none;
+	cursor: pointer;
+	overflow: hidden;
+	outline: none;
+	font-size: 50px;
+	border-radius: 50%;
 }
 
 magasin {
 	position: absolute;
-	margin-top:70px;
-	margin-left:620px;
-	filter:alpha(opacity=50);
-	-moz-opacity:0.5;
+	margin-top: 70px;
+	margin-left: 620px;
+	filter: alpha(opacity = 50);
+	-moz-opacity: 0.5;
 	opacity: 0.5;
-	background-color:#00F;
-    border: none;
-    cursor:pointer;
-    overflow: hidden;
-    outline:none;
-    font-size: 50px;
-    border-radius: 50%;
+	background-color: #00F;
+	border: none;
+	cursor: pointer;
+	overflow: hidden;
+	outline: none;
+	font-size: 50px;
+	border-radius: 50%;
 }
 
-div#donjonimg{
-	display:none;
-	position:absolute;
+div#donjonimg {
+	display: none;
+	position: absolute;
 	background-size: 70%;
-	
 }
 
 div#donjonimg img {
-height:85%;
-width:85%;
- border: solid 4px black;
-
+	height: 85%;
+	width: 85%;
+	border: solid 4px black;
 }
 
-div#versusimg{
-	display:none;
-	position:absolute;
+div#versusimg {
+	display: none;
+	position: absolute;
 	background-size: 70%;
-	}
+}
 
 div#versusimg img {
-height:75%;
-width:75%;
-border: solid 4px black;
+	height: 75%;
+	width: 75%;
+	border: solid 4px black;
 }
 
-div#sop{
+div#sop {
 	background-size: 70%;
 	text-align: left;
-	}
-
-div#sop img {
-height:initial;
-width:initial;
 }
 
+div#sop img {
+	height: initial;
+	width: initial;
+}
 
-
-
+div#logoSopramon img {
+	height: initial;
+	width: initial;
+}

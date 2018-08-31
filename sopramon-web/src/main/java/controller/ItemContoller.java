@@ -29,17 +29,19 @@ public class ItemContoller {
 	}
 
 	@PostMapping("/modifierItem")
-	public String modifierItem(@RequestParam String nom, @RequestParam double prix, @RequestParam int attaque,
+	public String modifierItem(@RequestParam String nom, @RequestParam int prix, @RequestParam int attaque,
 			@RequestParam int defense, @RequestParam int esquive, @RequestParam int vitesse, @RequestParam int id,
-			Model model) {
+			@RequestParam String description, Model model) {
 		Item myItem = new Item();
 
 		myItem.setId(id);
 		myItem.setNom(nom);
+		myItem.setPrix(prix);
 		myItem.setAttaque(attaque);
 		myItem.setDefense(defense);
 		myItem.setEsquive(esquive);
 		myItem.setVitesse(vitesse);
+		myItem.setDescription(description);
 
 		daoItem.save(myItem);
 		return "redirect:/gestionItems";
@@ -57,20 +59,23 @@ public class ItemContoller {
 	@GetMapping("/creerItem")
 	public String creerItem(Model model) {
 		model.addAttribute("items", daoItem.findAll());
-	return "creerItem";
+		return "creerItem";
 	}
 
 	@PostMapping("/creerItem")
-	public String creerItem(@RequestParam String nom, @RequestParam double prix, @RequestParam int attaque, @RequestParam int defense, @RequestParam int esquive, @RequestParam int vitesse,
-			Model model) {
+	public String creerItem(@RequestParam String nom, @RequestParam int prix, @RequestParam int attaque,
+			@RequestParam int defense, @RequestParam int esquive, @RequestParam int vitesse,
+			@RequestParam String description, Model model) {
 		Item myItem = new Item();
-		
+
 		myItem.setNom(nom);
+		myItem.setPrix(prix);
 		myItem.setAttaque(attaque);
 		myItem.setDefense(defense);
 		myItem.setEsquive(esquive);
 		myItem.setVitesse(vitesse);
-		
+		myItem.setDescription(description);
+
 		daoItem.save(myItem);
 		return "redirect:/gestionItems";
 	}

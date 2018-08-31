@@ -11,7 +11,7 @@
 		<h1>MODIFIER ITEM</h1>
 	</header>
 
-<section layout:fragment="custom-content">
+	<section layout:fragment="custom-content">
 		<form method="POST">
 			<div>
 				<label>Nom de l'item :</label> <input class="form-control"
@@ -36,6 +36,10 @@
 			<div>
 				<label>Valeur de vitesse :</label> <input class="form-control"
 					type="number" name="vitesse" th:value="${item.vitesse}" />
+			</div>
+			<div>
+				<label>Description :</label> <input class="form-control"
+					type="text" name="description" th:value="${item.description}" />
 			</div>
 			<button type="submit" class="btn btn-primary">Modifier</button>
 		</form>

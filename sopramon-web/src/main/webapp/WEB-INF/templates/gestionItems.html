@@ -25,6 +25,7 @@
 					<th>Défense</th>
 					<th>Esquive</th>
 					<th>Vitesse</th>
+					<th>Description</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -35,6 +36,7 @@
 					<td>[[${ item.defense }]]</td>
 					<td>[[${ item.esquive }]]</td>
 					<td>[[${ item.vitesse }]]</td>
+					<td>[[${ item.description }]]</td>
 					<td><a th:href="@{modifierItem(id=${ item.id})}" type="button"
 						class="btn-load">Modifier</a></td>
 					<td><a th:href="@{supprimerItem(id=${ item.id})}"
