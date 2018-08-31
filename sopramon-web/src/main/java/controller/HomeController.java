@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import sopramon.dao.IDAOSigne;
 import sopramon.dao.IDAOSopramon;
 import sopramonbis.model.Capacite;
 import sopramonbis.model.Signe;
@@ -29,8 +30,16 @@ import sopramonbis.model.Utilisateur;
 public class HomeController {
 
 	@Autowired
+	private IDAOSigne daoSigne;
+
+	@Autowired
 	private IDAOSopramon daoSopramon;
 
+	@GetMapping("/icombat")
+	public String  icombat() {
+		return "icombat";
+	}
+	
 	@GetMapping("/admin")
 	public String admin() {
 		return "admin";
@@ -42,7 +51,8 @@ public class HomeController {
 	}
 	
 	@GetMapping("/inscription")
-	public String inscription() {
+	public String inscription(Model model) {
+		model.addAttribute("signes", daoSigne.findAll());
 		return "inscription";
 	}
 	
@@ -76,17 +86,16 @@ public class HomeController {
 	}
 	
 	@PostMapping("/inscription")
-	public String Inscription(@DateTimeFormat(pattern="yyyy-MM-dd") @RequestParam Date dateNaissance, @RequestParam String username, @RequestParam String password, @RequestParam String nom, @RequestParam String prenom,Model model) {
+	public String Inscription(@DateTimeFormat(pattern="yyyy-MM-dd") @RequestParam Date dateNaissance, @RequestParam String username, @RequestParam String password, @RequestParam String nom, @RequestParam int signe, @RequestParam String prenom,@RequestParam String nomsopramon,Model model) {
 
 		Sopramon monSopramon = new Sopramon();
 		Utilisateur monUtilisateur = new Utilisateur();
-		Signe monSigne = new Signe();
 		Type monType = new Type();
 		Capacite maCapacite = new Capacite();
+		Signe monSigne = daoSigne.findById(signe).get();
 		
+			
 		
-		monSigne.setId(1);
-		monType.setId(1);
 		maCapacite.setAttaque(50);
 		maCapacite.setDefense(50);
 		maCapacite.setPointDeVie(500);
@@ -97,16 +106,17 @@ public class HomeController {
 		monUtilisateur.setNom(nom);
 		monUtilisateur.setUsername(username);
 		monUtilisateur.setPassword(password);
-			
+		
 		monSopramon.setExperience(0);
 		monSopramon.setNiveau(1);
 		monSopramon.setCapacite(maCapacite);
-		monSopramon.setType(monType);;
-		monSopramon.setNom(nom);
-		monSopramon.setSigne(monSigne);
+		monSopramon.setNom(nomsopramon);
 		monSopramon.setArgent(100.0);
 		monSopramon.setDateNaissance(dateNaissance);
 		monSopramon.setUtilisateur(monUtilisateur);
+		monSopramon.setSigne(monSigne);
+		monSopramon.setType(monSigne.getType());
+		
 		daoSopramon.save(monSopramon);
 
 
