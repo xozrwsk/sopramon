@@ -75,6 +75,9 @@ tr {
 	color: white;
 }
 
+td{
+	text-align: center;
+}
 table {
 	width: 50%;
 	height: 160px;

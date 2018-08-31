@@ -16,7 +16,7 @@
 	<section layout:fragment="custom-content">
 		<a class="btn btn-primary" href="creerItem">Créer item</a>
 
-		<table>
+		<table border="1" cellpadding="15" cellspacing="10" >
 			<thead>
 				<tr>
 					<th>Nom</th>
@@ -26,21 +26,24 @@
 					<th>Esquive</th>
 					<th>Vitesse</th>
 					<th>Description</th>
+					<th>Modifier</th>
+					<th>Supprimer</th>
 				</tr>
+				<p></p>
 			</thead>
 			<tbody>
 				<tr th:each="item : ${ items }">
-					<td>[[${ item.nom }]]</td>
-					<td>[[${ item.prix }]]</td>
-					<td>[[${ item.attaque }]]</td>
-					<td>[[${ item.defense }]]</td>
-					<td>[[${ item.esquive }]]</td>
-					<td>[[${ item.vitesse }]]</td>
-					<td>[[${ item.description }]]</td>
-					<td><a th:href="@{modifierItem(id=${ item.id})}" type="button"
-						class="btn-load">Modifier</a></td>
-					<td><a th:href="@{supprimerItem(id=${ item.id})}"
-						type="button" class="btn-clear">Supprimer</a></td>
+					<td >[[${ item.nom }]]</td>
+					<td >[[${ item.prix }]]</td>
+					<td> [[${ item.attaque }]]</td>
+					<td >[[${ item.defense }]]</td>
+					<td >[[${ item.esquive }]]</td>
+					<td >[[${ item.vitesse }]]</td>
+					<td >[[${ item.description }]]</td>
+					<td align="center"><a th:href="@{modifierItem(id=${ item.id})}" type="button"
+						class="btn btn-success">Modifier</a></td>
+					<td align="center"><a th:href="@{supprimerItem(id=${ item.id})}"
+						type="button" class="btn btn-danger">Supprimer</a></td>
 				</tr>
 			</tbody>
 		</table>
