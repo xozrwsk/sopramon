@@ -60,6 +60,8 @@ public class Sopramon {
 	@ManyToOne
 	@JoinColumn(name = "SOP_TYPE_ID")
 	private Type Type;
+	
+
 
 	public Date getDateNaissance() {
 		return dateNaissance;
@@ -140,5 +142,8 @@ public class Sopramon {
 	public void setSigne(Signe signe) {
 		Signe = signe;
 	}
+
+	
+	
 
 }

@@ -74,11 +74,18 @@ public class HomeController {
 
 	@PostMapping("/connexion")
 	public String verifUtilisateur(@RequestParam String username, @RequestParam String password, Model model) {
-
-		if (daoSopramon.finBySopramon(username, password) == null)
+		Sopramon sp = daoSopramon.finBySopramon(username, password);
+		
+		if (sp == null)
 		{
 	    model.addAttribute("msgerr", "Username ou Password erroné(s)");
 	    return "connexion";
+		}
+		
+		if (sp.getUtilisateur().isBannissement())
+		{
+			model.addAttribute("msgban", "Votre compte est banni");
+			return "connexion";
 		}
 	
         return "redirect:/acces";

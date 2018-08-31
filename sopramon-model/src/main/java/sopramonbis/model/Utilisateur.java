@@ -36,6 +36,9 @@ public class Utilisateur {
 	@Size(max = 100)
 	private String password;
 	
+	@Column(name = "UT_BANNISSEMENT", columnDefinition = "BOOLEAN")
+	private boolean Bannissement;
+	
 	public int getId() {
 		return id;
 	}
@@ -65,6 +68,12 @@ public class Utilisateur {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public boolean isBannissement() {
+		return Bannissement;
+	}
+	public void setBannissement(boolean bannissement) {
+		Bannissement = bannissement;
 	}
 	
 	
