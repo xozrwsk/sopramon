@@ -16,7 +16,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 protected void configure(HttpSecurity http) throws Exception {
 http.authorizeRequests()
-.antMatchers("/assets/**").permitAll()
+.antMatchers("/resources/**").permitAll()
+.antMatchers("/menu").permitAll()
+.antMatchers("/inscription").permitAll()
 .antMatchers("/**").hasAnyRole("ADMIN", "USER")
 .and()
 .formLogin()

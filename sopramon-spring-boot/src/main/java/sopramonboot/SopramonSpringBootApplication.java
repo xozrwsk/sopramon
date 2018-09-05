@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @SpringBootApplication
-@EntityScan("sopramonbis.model")
+@EntityScan({"sopramonbis.model", "sopramonboot.controller", "sopramonboot.dao"})
 public class SopramonSpringBootApplication {
 
 	public static void main(String[] args) {
