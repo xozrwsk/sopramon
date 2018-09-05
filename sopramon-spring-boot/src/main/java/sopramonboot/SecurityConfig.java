@@ -22,15 +22,15 @@ http.authorizeRequests()
 .antMatchers("/**").hasAnyRole("ADMIN", "USER")
 .and()
 .formLogin()
-.loginPage("/login")
+.loginPage("/connexion")
 .loginProcessingUrl("/perform_login")
-.defaultSuccessUrl("/login", true)
-.failureUrl("/login?error=true")
+.defaultSuccessUrl("/connexion", true)
+.failureUrl("/connexion?error=true")
 .permitAll()
 .and()
 .logout()
 .logoutUrl("/ma_page_de_deconnexion")
-.logoutSuccessUrl("/login")
+.logoutSuccessUrl("/connexion")
 .permitAll();
 }
 
@@ -38,16 +38,16 @@ http.authorizeRequests()
 @Bean
 public PasswordEncoder passwordEncoder() {
 	BCryptPasswordEncoder bcrypt = new BCryptPasswordEncoder();
-    System.out.println("1, mot de passe : " + bcrypt.encode("1"));
-    System.out.println("2, mot de passe : " + bcrypt.encode("2"));
-    System.out.println("3, mot de passe : " + bcrypt.encode("3"));
-    System.out.println("4, mot de passe : " + bcrypt.encode("4"));
-    System.out.println("5, mot de passe : " + bcrypt.encode("5"));
-    System.out.println("6, mot de passe : " + bcrypt.encode("6"));
-    System.out.println("7, mot de passe : " + bcrypt.encode("7"));
-    System.out.println("8, mot de passe : " + bcrypt.encode("8"));
-    System.out.println("9, mot de passe : " + bcrypt.encode("9"));
-    System.out.println("10, mot de passe : " + bcrypt.encode("10"));
+//    System.out.println("1, mot de passe : " + bcrypt.encode("1"));
+//    System.out.println("2, mot de passe : " + bcrypt.encode("2"));
+//    System.out.println("3, mot de passe : " + bcrypt.encode("3"));
+//    System.out.println("4, mot de passe : " + bcrypt.encode("4"));
+//    System.out.println("5, mot de passe : " + bcrypt.encode("5"));
+//    System.out.println("6, mot de passe : " + bcrypt.encode("6"));
+//    System.out.println("7, mot de passe : " + bcrypt.encode("7"));
+//    System.out.println("8, mot de passe : " + bcrypt.encode("8"));
+//    System.out.println("9, mot de passe : " + bcrypt.encode("9"));
+//    System.out.println("10, mot de passe : " + bcrypt.encode("10"));
 return new BCryptPasswordEncoder();
 }
 
