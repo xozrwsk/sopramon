@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="ISO-8859-1" />
+<base href="/sopramon-web/" />
+<title layout:title-pattern="$LAYOUT_TITLE -$CONTENT_TITLE">Formation
+	Servlet</title>
+<!-- <link rel="stylesheet" href="resources/assets/css/le-style-general.css" /> -->
+<link rel="stylesheet"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="css/anim.css" />
+<link rel="stylesheet" type="text/css" href="css/mef.css" />
+</head>
+
+<body>
+	<!-- titre sopramon en police-sopramon -->
+	<div id="logoSopramon" layout:fragment="sop">
+		<a href="menu.html"><img
+			src="https://fontmeme.com/permalink/180817/fe5d1bf70afecce8a969952cc773cb7d.png"
+			alt="police-pokemon" border="0"></a>
+	</div>
+
+
+	<section layout:fragment="custom-content">
+		<p>Le contenu par défaut</p>
+	</section>
+	
+	<p></p>
+	
+
+	<!-- Bas de page en commun -->
+	<footer layout:fragment="custom-footer">
+		<section>
+			<a type="button" class="btn btn-primary" href="menu">Menu</a> <a
+				type="button" class="btn btn-warning" href="javascript:history.go(-1)">Page précédente</a>
+		</section>
+	</footer>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<title>Admin</title>
+<meta name="sopramon" content="Sopramon" />
+
+<link rel="stylesheet" type="text/css" href="anim.css" />
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="mef.css" />
+
+<base href="/sopramon-html/" />
+</head> -->

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout.html">
+
+<head>
+<title>Sopramon - Connexion</title>
+</head>
+
+<body id="connexion">
+
+	<header>
+		<h1>SE CONNECTER</h1>
+	</header>
+
+<section layout:fragment="custom-content">
+	<p th:text="${ msgerr }"></p>
+	<p th:text="${ msgban }"></p>
+	
+	<form method="POST">
+		<div id="usernameCo">
+		<img src="ball1.jpg" alt="" /> 
+			<label for="usernameCo">Identifiant</label>
+			<input type="text" id="username" name="username" placeholder="Username"  width="30px" required>
+		</div>
+		<div id="passwordCo">
+			<img src="ball3.jpg" alt="" /> 
+			<label for="passwordCo">Mot de passe</label> 
+			<input type="password" id="password" name="password" placeholder="Password"  width="30px">
+		</div>
+
+		
+
+		<button type="submit" name="connexion" class="btn btn-warning"
+			value="Connexion">Connexion</button>
+
+
+	</form>
+
+
+
+
+
+	<script src="jquery-3.3.1.min.js"></script>
+	<script src="connexion-jquery.js"></script>
+</body>
+</html>

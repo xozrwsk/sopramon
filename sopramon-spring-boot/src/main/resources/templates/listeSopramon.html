@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout.html">
+
+<head>
+<title>Liste des Sopramon</title>
+</head>
+
+<body id="admin">
+
+		<header>
+			<h1>LISTE DES SOPRAMON</h1>
+		</header>
+
+		<section layout:fragment="custom-content">
+			<button class="btn btn-primary">Rafraichir</button>
+
+			<table id="sopramons" class="table table-striped table-dark">
+				<thead>
+					<tr>
+						<th scope="col">Nom</th>
+						<th scope="col">Date naissance</th>
+						<th scope="col">Experience</th>
+						<th scope="col">Niveau</th>
+						<th scope="col">Argent</th>
+						<th scope="col">Bannissement</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr th:each="sopramon : ${ sopramons }">
+						<th>[[${ sopramon.nom }]]</th>
+						<th>[[${ sopramon.dateNaissance }]]</th>
+						<th>[[${ sopramon.experience }]]</th>
+						<th>[[${ sopramon.niveau }]]</th>
+						<th>[[${ sopramon.argent }]]</th>
+						<th>[[${ sopramon.bannissement }]]</th>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+</body>
+
+</html>

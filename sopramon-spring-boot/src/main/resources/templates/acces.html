@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorator="layout.html">
+    
+	<head>
+		<title>Sopramon - Accès</title>
+	</head>
+
+
+<body id="acces">
+
+				
+	<header>
+		<h1>ACCES</h1>
+	</header>
+<section layout:fragment="custom-content">
+	<section id="admin">
+		<p class="lien1">
+			<img src="ball1.jpg" alt="" />
+		</p>
+		<p>
+			<nav>
+				<ul>
+					<li style="width: 200px;">
+					<a style="display: block; width: 80%" href="admin">Admin</a></li>
+				</ul>
+			</nav>
+		</p>
+	</section>
+
+	<section id="sopramon">
+		<p class="lien2">
+			<img src="ball3.jpg" alt="" />
+		</p>
+		<p>
+			<nav>
+				<ul>
+					<li style="width: 200px;">
+					<a style="display: block; width: 80%" href="sopramon" >Sopramon</a></li>
+				</ul>
+			</nav>
+		</p>
+	</section>
+
+
+	<script src="jquery-3.3.1.min.js"></script>
+	<script src="navigation.js"></script>
+
+</body>
+
+</html>

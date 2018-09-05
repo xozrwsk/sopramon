@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout.html">
+
+<head>
+<title>Sopramon - Map Combat</title>
+</head>
+
+
+<body id="icombat">
+<div layout:fragment="custom-content">
+
+<donjon>
+<button class="donjon" id="donjon"> Donjon </button>
+</donjon>
+
+<versus>
+<button class="versus" id="versus"> Versus </button>
+</versus>
+
+<magasin>
+<input type="button" value="Magasin" onclick="document.location.href='achatitem.html';">
+</magasin>
+
+<cacher>
+<button class="cacher" id="cacher"> Fermer </button>
+</cacher>
+
+<div id=donjonimg>
+ <img id="donjonimg" src="donjonfight.jpg"><br/>
+</div>
+
+<div id=versusimg>
+ <img id="versusimg" src="versus.jpg"><br/>
+</div>
+
+
+<script src="jquery-3.3.1.min.js"></script>
+<script src="icombat-jquery.js"></script>
+
+</body>
+
+</html>
+
+

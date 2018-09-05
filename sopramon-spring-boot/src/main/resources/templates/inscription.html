@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout.html">
+
+<head>
+<title>Sopramon - Inscription</title>
+</head>
+
+<body id="inscription">
+
+
+
+	<header>
+		<h1>INSCRIPTION</h1>
+	</header>
+	<div layout:fragment="custom-content">
+		
+		
+		
+		<form method="POST">
+
+			<div class="form-group">
+				<label for="nom">Nom</label> <input
+					name="nom" type="text" class="form-control" id="nom"
+					aria-describedby="emailHelp" placeholder="Entrer nom">
+			</div>
+			<div class="form-group">
+				<label for="prenom">Prénom</label> <input name="prenom" type="text"
+					class="form-control" id="prenom" placeholder="Entrer prénom">
+			</div>
+			<div class="form-group">
+				<label for="username">Username</label> <input name="username"
+					type="text" class="form-control" id="username"
+					placeholder="Entrer username">
+			</div>
+			<div class="form-group">
+				<label for="password">Mot de passe</label> <input name="password"
+					type="text" class="form-control" id="password"
+					placeholder="Entrer mot de passe">
+			</div>
+
+			<div class="form-group">
+				<label for="date">Date de naissance</label> <input
+					name="dateNaissance" type="date" class="form-control" id="date"
+					placeholder="Entrer date de naissance">
+			</div>
+			
+			<div class="form-group">
+				<label for="nomsopramon">Nom du Sopramon</label> <input
+					name="nomsopramon" type="text" class="form-control" id="nomsopramon"
+					aria-describedby="emailHelp" placeholder="Entrer nom du Sopramon">
+			</div>
+
+			<div class="form-group row">
+				<label for="signe" class="form-label">Signe du Sopramon </label>
+				 <select class="form-control" style="width:400px" name="signe" size="4">
+					<option th:each="signe : ${ signes }" th:value="${ signe.id }" th:text="${ signe.nom }" />
+				</select>
+				</div>
+
+
+
+			<button type="submit" class="btn btn-primary">S'inscrire</button>
+			</form>
+		</form>
+
+		<script src="jquery-3.3.1.min.js"></script>
+		<script src="navigation.js"></script>
+
+		<script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="inscription-jquery.js"></script>
+		<script src="jquery-3.3.1.min.js"></script>
+		<script src="navigation.js"></script>
+</body>
+</html>

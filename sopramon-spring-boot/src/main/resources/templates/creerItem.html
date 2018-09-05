@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout.html">
+
+<head>
+<title>Sopramon - Ajouter item</title>
+</head>
+
+<body id="admin">
+	<header>
+		<h1>AJOUTER UN ITEM</h1>
+	</header>
+
+	<section layout:fragment="custom-content">
+		<form method="POST">
+			<div>
+				<label>Nom de l'item :</label> <input class="form-control"
+					type="text" name="nom" placeholder="Saisir le nom de l'item"
+					th:value="${item?.nom}" />
+			</div>
+			<div>
+				<label>Prix :</label> <input class="form-control" type="number"
+					name="prix" placeholder="Saisir le prix" th:value="${item?.prix}" />
+			</div>
+			<div>
+				<label>Valeur d'attaque :</label> <input class="form-control"
+					type="number" name="attaque"
+					placeholder="Saisir la valeur d'attaque"
+					th:value="${item?.attaque}" />
+			</div>
+			<div>
+				<label>Valeur de défense :</label> <input class="form-control"
+					type="number" name="defense"
+					placeholder="Saisir la valeur de défense"
+					th:value="${item?.defense}" />
+			</div>
+			<div>
+				<label>Valeur d'esquive :</label> <input class="form-control"
+					type="number" name="esquive"
+					placeholder="Saisir la valeur d'esquive"
+					th:value="${item?.esquive}" />
+			</div>
+			<div>
+				<label>Valeur de vitesse :</label> <input class="form-control"
+					type="number" name="vitesse"
+					placeholder="Saisir la valeur de vitesse"
+					th:value="${item?.vitesse}" />
+			</div>
+			<div>
+				<label>Description :</label> <input class="form-control"
+					type="text" name="description"
+					placeholder="Saisir une description"
+					th:value="${item?.description}" />
+			</div>
+			<button type="submit" class="btn btn-primary">Ajouter</button>
+		</form>
+
+	</section>
+
+</body>
+</html>

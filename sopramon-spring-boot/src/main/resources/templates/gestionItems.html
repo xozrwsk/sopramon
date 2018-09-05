@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout.html">
+
+<head>
+<title>Sopramon - Gestion Items</title>
+</head>
+
+<body id="admin">
+
+	<header>
+		<h1>GESTION DES ITEMS</h1>
+	</header>
+
+	<section layout:fragment="custom-content">
+		<a class="btn btn-primary" href="creerItem">Créer item</a>
+	<p></p>
+		<table border="1" cellpadding="15" cellspacing="10" >
+			<thead>
+				<tr>
+					<th>Nom</th>
+					<th>Prix</th>
+					<th>Attaque</th>
+					<th>Défense</th>
+					<th>Esquive</th>
+					<th>Vitesse</th>
+					<th>Description</th>
+					<th>Modifier</th>
+					<th>Supprimer</th>
+				</tr>
+			
+			</thead>
+			<tbody>
+				<tr th:each="item : ${ items }">
+					<td >[[${ item.nom }]]</td>
+					<td >[[${ item.prix }]]</td>
+					<td> [[${ item.attaque }]]</td>
+					<td >[[${ item.defense }]]</td>
+					<td >[[${ item.esquive }]]</td>
+					<td >[[${ item.vitesse }]]</td>
+					<td >[[${ item.description }]]</td>
+					<td align="center"><a th:href="@{modifierItem(id=${ item.id})}" type="button"
+						class="btn btn-success">Modifier</a></td>
+					<td align="center"><a th:href="@{supprimerItem(id=${ item.id})}"
+						type="button" class="btn btn-danger">Supprimer</a></td>
+				</tr>
+			</tbody>
+		</table>
+
+	</section>
+
+</body>
+
+</html>
