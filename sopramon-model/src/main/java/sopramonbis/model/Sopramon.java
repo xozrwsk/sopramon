@@ -62,7 +62,6 @@ public class Sopramon {
 	private Type Type;
 	
 
-
 	public Date getDateNaissance() {
 		return dateNaissance;
 	}

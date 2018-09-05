@@ -11,6 +11,8 @@ import javax.validation.constraints.Size;
 
 public class Utilisateur {
 	
+	
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "UT_ID")
@@ -36,6 +38,10 @@ public class Utilisateur {
 	@Size(max = 100)
 	private String password;
 	
+	@Column(name="UT_ADMIN", columnDefinition = "BOOLEAN", nullable=false)
+	@NotEmpty
+	private boolean isAdmin;
+
 	@Column(name = "UT_BANNISSEMENT", columnDefinition = "BOOLEAN")
 	private boolean Bannissement;
 	
@@ -76,5 +82,11 @@ public class Utilisateur {
 		Bannissement = bannissement;
 	}
 	
+	public boolean isAdmin() {
+		return isAdmin;
+	}
+	public void setAdmin(boolean isAdmin) {
+		this.isAdmin = isAdmin;
+	}
 	
 }
