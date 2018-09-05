@@ -20,15 +20,15 @@ http.authorizeRequests()
 .antMatchers("/**").hasAnyRole("ADMIN", "USER")
 .and()
 .formLogin()
-.loginPage("/ma_page_de_login")
+.loginPage("/connexion")
 .loginProcessingUrl("/perform_login")
 .defaultSuccessUrl("/home", true)
-.failureUrl("/ma_page_de_login?error=true")
+.failureUrl("/connexion?error=true")
 .permitAll()
 .and()
 .logout()
 .logoutUrl("/ma_page_de_deconnexion")
-.logoutSuccessUrl("/ma_page_de_login")
+.logoutSuccessUrl("/connexion")
 .permitAll();
 }
 

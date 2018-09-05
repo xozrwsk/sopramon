@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.springframework.org/security/tags"
 	layout:decorator="layout.html">
 
 <head>
@@ -42,6 +43,8 @@
 					type="text" name="description" th:value="${item.description}" />
 			</div>
 			<button type="submit" class="btn btn-primary">Modifier</button>
+			<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+		
 		</form>
 
 	</section>

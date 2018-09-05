@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.springframework.org/security/tags"
 	layout:decorator="layout.html">
 
 <head>
@@ -40,6 +41,7 @@
 					<td >[[${ item.esquive }]]</td>
 					<td >[[${ item.vitesse }]]</td>
 					<td >[[${ item.description }]]</td>
+						<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
 					<td align="center"><a th:href="@{modifierItem(id=${ item.id})}" type="button"
 						class="btn btn-success">Modifier</a></td>
 					<td align="center"><a th:href="@{supprimerItem(id=${ item.id})}"
