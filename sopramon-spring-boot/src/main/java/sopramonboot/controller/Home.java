@@ -21,9 +21,9 @@ model.addAttribute("utilisateur", username);
 return "home";
 }
 
-@GetMapping("/ma_page_de_login")
+@GetMapping("/login")
 public String login() {
-return "ma_page_de_login";
+return "login";
 }
 
 

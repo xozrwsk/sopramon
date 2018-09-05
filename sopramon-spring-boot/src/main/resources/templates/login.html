@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    xmlns:sec="http://www.springframework.org/security/tags"
+    layout:decorator="layout.html">
+    
+	<head>
+		<title>- Connexion -</title>
+	</head>
+	
+<body>
+		
+<form method ="POST" action="perform_login">
+	<div id="username">
+			<label>username :</label> 
+			<input type="text" id="username"
+				name="username" placeholder="username">
+		</div>
+		<div id="mdp">
+			<label>mot de passe :</label> 
+			<input type="text" id="mdp"
+				name="password" placeholder="mdp">
+		</div>
+<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+<button type="submit" class="btn btn-danger">Se connecter</button>
+</form>
+<p></p>
+		
+
+</body>
+</html>
