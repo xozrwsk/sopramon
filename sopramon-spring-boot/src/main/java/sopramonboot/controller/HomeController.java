@@ -47,7 +47,7 @@ public class HomeController {
 	
 	@GetMapping("/login")
 	public String login() {
-		return "login";
+		return "connexion";
 	}
 	
 	@GetMapping("/sopramon")
@@ -71,11 +71,6 @@ public class HomeController {
 		return "menu";
 	}
 	
-	
-	@GetMapping("/connexion")
-	public String saveUtilisateur() {
-		return "connexion";
-	}
 
 	@PostMapping("/connexion")
 	public String verifUtilisateur(@RequestParam String username, @RequestParam String password, Model model) {
@@ -83,7 +78,7 @@ public class HomeController {
 		
 		if (sp == null)
 		{
-	    model.addAttribute("msgerr", "Username ou Password erron�(s)");
+	    model.addAttribute("msgerr", "Username ou Password erroné(s)");
 	    return "connexion";
 		}
 		
