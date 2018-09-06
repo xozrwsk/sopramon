@@ -25,10 +25,8 @@
 						<th scope="col">Experience</th>
 						<th scope="col">Niveau</th>
 						<th scope="col">Argent</th>
-						<th scope="col">Bannissement</th>
 					</tr>
 				</thead>
-	<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
 				<tbody>
 					<tr th:each="sopramon : ${ sopramons }">
 						<th>[[${ sopramon.nom }]]</th>
@@ -36,7 +34,6 @@
 						<th>[[${ sopramon.experience }]]</th>
 						<th>[[${ sopramon.niveau }]]</th>
 						<th>[[${ sopramon.argent }]]</th>
-						<th>[[${ sopramon.bannissement }]]</th>
 					</tr>
 				</tbody>
 			</table>

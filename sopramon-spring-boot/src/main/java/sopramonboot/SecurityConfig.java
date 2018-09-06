@@ -11,7 +11,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled=true)
+@EnableGlobalMethodSecurity(securedEnabled=true)
 
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 protected void configure(HttpSecurity http) throws Exception {
