@@ -24,13 +24,14 @@
 			<label for="usernameCo">Identifiant</label>
 			<input type="text" id="username" name="username" placeholder="Username"  width="30px" required>
 		</div>
+		<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
 		<div id="passwordCo">
 			<img src="ball3.jpg" alt="" /> 
 			<label for="passwordCo">Mot de passe</label> 
 			<input type="password" id="password" name="password" placeholder="Password"  width="30px">
 		</div>
 
-			<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+			
 
 		<button type="submit" name="connexion" class="btn btn-warning"
 			value="Connexion">Connexion</button>

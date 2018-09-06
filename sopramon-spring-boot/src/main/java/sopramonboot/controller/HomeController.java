@@ -1,5 +1,7 @@
 package sopramonboot.controller;
 
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -8,6 +10,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -45,6 +48,7 @@ public class HomeController {
 		return "admin";
 	}
 	
+	
 	@GetMapping("/connexion")
 	public String login() {
 		return "connexion";
@@ -73,22 +77,8 @@ public class HomeController {
 	
 
 	@PostMapping("/connexion")
-	public String verifUtilisateur(@RequestParam String username, @RequestParam String password, Model model) {
-		Sopramon sp = daoSopramon.finBySopramon(username, password);
-		
-		if (sp == null)
-		{
-	    model.addAttribute("msgerr", "Username ou Password erroné(s)");
-	    return "connexion";
-		}
-		
-		if (sp.getUtilisateur().isBannissement())
-		{
-			model.addAttribute("msgban", "Votre compte est banni");
-			return "connexion";
-		}
-	
-        return "redirect:/acces";
+	public String verifUtilisateur() {
+	        return "acces";
 		
 	}
 	
@@ -135,11 +125,3 @@ public class HomeController {
 }
 
 
-
-//Sopramon monSopramon = new Sopramon();
-//Utilisateur monUtilisateur = new Utilisateur();
-//
-//monUtilisateur.setUsername(username);
-//monUtilisateur.setPassword(password);
-//monSopramon.setUtilisateur(monUtilisateur);
-//daoSopramon.save(monSopramon);
