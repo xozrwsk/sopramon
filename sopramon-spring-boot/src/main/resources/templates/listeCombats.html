@@ -15,6 +15,29 @@
 			<h1>LISTE DES COMBATS</h1>
 		</header>
 	</section>
+	
+	<section layout:fragment="custom-content">
+			<button class="btn btn-primary">Rafraichir</button>
+
+			<table id="combats" class="table table-striped table-dark">
+				<thead>
+					<tr>
+						<th scope="col">Date</th>
+						<th scope="col">Arène</th>
+						<th scope="col">Type</th>
+						<th scope="col">Tours</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="combat : ${ combats }">
+						<th>[[${ combat.dateCombat }]]</th>
+						<th>[[${ combat.arene }]]</th>
+						<th>[[${ combat.type }]]</th>
+						<th>[[${ combat.tours }]]</th>
+					</tr>
+				</tbody>
+			</table>
+		</section>
 
 </body>
 
