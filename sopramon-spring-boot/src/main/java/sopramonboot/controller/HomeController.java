@@ -72,8 +72,6 @@ public class HomeController {
 		return "menu";
 	}
 	
-	
-	
 	@PreAuthorize("permitAll()")
 	@PostMapping("/inscription")
 	public String Inscription(@DateTimeFormat(pattern="yyyy-MM-dd") @RequestParam Date dateNaissance, @RequestParam String username, @RequestParam String password, @RequestParam String nom, @RequestParam int signe, @RequestParam String prenom,@RequestParam String nomsopramon,Model model) {
