@@ -29,6 +29,7 @@ import sopramonbis.model.Utilisateur;
 import sopramonboot.dao.IDAOSigne;
 import sopramonboot.dao.IDAOSopramon;
 
+@PreAuthorize("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')")
 @Controller
 public class HomeController {
 
@@ -48,7 +49,7 @@ public class HomeController {
 		return "admin";
 	}
 	
-	
+	@PreAuthorize("permitAll()")
 	@GetMapping("/connexion")
 	public String login() {
 		return "connexion";
@@ -59,6 +60,7 @@ public class HomeController {
 		return "sopramon";
 	}
 	
+	@PreAuthorize("permitAll()")
 	@GetMapping("/inscription")
 	public String inscription(Model model) {
 		model.addAttribute("signes", daoSigne.findAll());
@@ -78,10 +80,11 @@ public class HomeController {
 
 	@PostMapping("/connexion")
 	public String verifUtilisateur() {
-	        return "acces";
+	 return "acces";
 		
 	}
 	
+	@PreAuthorize("permitAll()")
 	@PostMapping("/inscription")
 	public String Inscription(@DateTimeFormat(pattern="yyyy-MM-dd") @RequestParam Date dateNaissance, @RequestParam String username, @RequestParam String password, @RequestParam String nom, @RequestParam int signe, @RequestParam String prenom,@RequestParam String nomsopramon,Model model) {
 
