@@ -11,6 +11,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -102,10 +103,15 @@ public class HomeController {
 		maCapacite.setEsquive(50);
 		maCapacite.setVitesse(50);
 		
+		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+		String encoderpassword = passwordEncoder.encode(password);
+
+		
+		
 		monUtilisateur.setPrenom(prenom);
 		monUtilisateur.setNom(nom);
 		monUtilisateur.setUsername(username);
-		monUtilisateur.setPassword(password);
+		monUtilisateur.setPassword(encoderpassword);
 		
 		monSopramon.setExperience(0);
 		monSopramon.setNiveau(1);

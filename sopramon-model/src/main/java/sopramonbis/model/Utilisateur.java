@@ -38,8 +38,7 @@ public class Utilisateur {
 	@Size(max = 100)
 	private String password;
 	
-	@Column(name="UT_ADMIN", columnDefinition = "BOOLEAN")
-	@NotEmpty
+	@Column(name="UT_ADMIN", columnDefinition = "BOOLEAN NOT NULL DEFAULT 0")
 	private boolean isAdmin;
 
 	@Column(name = "UT_BANNISSEMENT", columnDefinition = "BOOLEAN")
