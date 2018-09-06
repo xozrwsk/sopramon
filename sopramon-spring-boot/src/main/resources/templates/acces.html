@@ -21,6 +21,7 @@
 <section layout:fragment="custom-content">
 
 
+<div sec:authorize="hasRole('ROLE_ADMIN')">
 	<section id="admin">
 		<p class="lien1">
 			<img src="ball1.jpg" alt="" />
@@ -34,7 +35,9 @@
 			</nav>
 		</p>
 	</section>
+	</div>
 
+<div sec:authorize="hasRole('ROLE_USER')">
 
 	<section id="sopramon">
 		<p class="lien2">
@@ -50,10 +53,11 @@
 		</p>
 	</section>
 
+</div>
 
 	<script src="jquery-3.3.1.min.js"></script>
 	<script src="navigation.js"></script>
-
+</section>
 </body>
 
 </html>

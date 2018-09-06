@@ -39,11 +39,13 @@ public class HomeController {
 	@Autowired
 	private IDAOSopramon daoSopramon;
 
+	@PreAuthorize("hasRole('ROLE_USER')")
 	@GetMapping("/icombat")
 	public String  icombat() {
 		return "icombat";
 	}
 	
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@GetMapping("/admin")
 	public String admin() {
 		return "admin";
@@ -55,6 +57,7 @@ public class HomeController {
 		return "connexion";
 	}
 	
+	@PreAuthorize("hasRole('ROLE_USER')")
 	@GetMapping("/sopramon")
 	public String sopramon() {
 		return "sopramon";
@@ -67,22 +70,19 @@ public class HomeController {
 		return "inscription";
 	}
 	
+	@PreAuthorize("permitAll()")
 	@GetMapping("/acces")
 	public String acces() {
 		return "acces";
 	}
 	
+	@PreAuthorize("permitAll()")
 	@GetMapping("/menu")
 	public String menu() {
 		return "menu";
 	}
 	
-
-	@PostMapping("/connexion")
-	public String verifUtilisateur() {
-	 return "acces";
-		
-	}
+	
 	
 	@PreAuthorize("permitAll()")
 	@PostMapping("/inscription")
