@@ -16,6 +16,7 @@ import sopramonbis.model.Signe;
 import sopramonbis.model.Sopramon;
 import sopramonbis.model.Type;
 import sopramonbis.model.Utilisateur;
+import sopramonboot.dao.IDAOItem;
 import sopramonboot.dao.IDAOSigne;
 import sopramonboot.dao.IDAOSopramon;
 
@@ -25,6 +26,7 @@ public class HomeController {
 
 	@Autowired
 	private IDAOSigne daoSigne;
+	
 
 	@Autowired
 	private IDAOSopramon daoSopramon;
@@ -46,6 +48,8 @@ public class HomeController {
 	public String login() {
 		return "connexion";
 	}
+
+	
 	
 	@PreAuthorize("hasRole('ROLE_USER')")
 	@GetMapping("/sopramon")
@@ -71,8 +75,7 @@ public class HomeController {
 	public String menu() {
 		return "menu";
 	}
-	
-	
+
 	
 	@PreAuthorize("permitAll()")
 	@PostMapping("/inscription")
