@@ -7,6 +7,7 @@ import { RequestOptions } from '@angular/http';
 
 @Injectable()
 export class CombatService {
+
     private combats: Array<Combat> = new Array<Combat>();
     private requestOptions: RequestOptions;
 
@@ -19,7 +20,7 @@ export class CombatService {
        this.http
             .get(this.appConfigService.getApiUrl() + "combats", this.requestOptions)
             .subscribe(resp => {
-                for (let p of resp.json()._embedded.produits) {
+                for (let c of resp.json()._embedded.produits) {
                     this.combats.push(new Combat(c));
                 }
             });
