@@ -1,0 +1,13 @@
+<p [class.negatif]> Sopramon - Liste Combat</p>
+
+
+
+
+    <table [class.positif]>
+        <tr combat-row></tr>
+        <tr *ngFor = "let c of combat()" combat-row [combat] = "c"></tr>
+    </table>
+
+
+<!-- jouer : attaquer
+ demarrer nouveau combat : initialiser -->
