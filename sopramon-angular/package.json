@@ -1,13 +1,13 @@
 {
-    "name": "eshop",
+    "name": "sopramon",
     "version": "1.0.0",
-    "description": "eShop Angular qui permet de vendre des produits en ligne !",
+    "description": "Sopramon , le jeu en ligne!",
     "scripts": {
         "start": "tsc && concurrently \"tsc -w\" \"lite-server\" "
     },
     "keywords": [],
-    "author": "Formation AJC (Jeremy PERROUAULT)",
-    "license": "MIT",
+    "author": "Xavier et Aude",
+    "license": "Sopra Steria",
     "dependencies": {
         "@angular/common": "~4.0.0",
         "@angular/compiler": "~4.0.0",
