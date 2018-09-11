@@ -36,7 +36,8 @@ const routes: Routes = [
     AppComponent ],
     providers: [
     AppConfigService,
-    CombatService
+    CombatService,
+    ICombatService,
   ],
 
 })
