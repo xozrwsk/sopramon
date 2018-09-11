@@ -8,6 +8,10 @@
       <th>Nom</th>
       <th>Prix</th>
       <th>Description</th>
+      <th>Attaque</th>
+      <th>Defense</th>
+      <th>Esquive</th>
+      <th>Vitesse</th>
       <th>Action</th>
     </tr>
   </thead>
@@ -16,6 +20,10 @@
       <td>{{ i.nom }}</td>
       <td>{{ i.prix }}</td>
       <td>{{ i.description }}</td>
+      <td>{{ i.attaque }}</td>
+      <td>{{ i.defense }}</td>
+      <td>{{ i.esquive }}</td>
+      <td>{{ i.vitesse }}</td>
       <td>
         <button (click)="acheterItem(i)" class="btn-load">Acheter</button>
       </td>

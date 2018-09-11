@@ -3,6 +3,14 @@ import { Item } from './item';
 
 
 @Injectable()
-export class ProduitService {
-  
+export class ItemService {
+  private items: Array<Item> = new Array<Item>();
+
+  public findAll(): Array<Item> {
+      return this.items;
+  }
+
+  public acheterItem(): {
+
+  }
 }

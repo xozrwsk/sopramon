@@ -9,6 +9,7 @@ import { ItemService } from './item.service';
 })
 export class ProduitComponent {
     private item: Item = new Item();
+    private items: Array<Item> = new Array<Item>();
 
     constructor(private itemService: ItemService) {
     }
