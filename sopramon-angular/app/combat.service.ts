@@ -20,45 +20,19 @@ export class CombatService {
             .get(this.appConfigService.getApiUrl() + "combats", this.requestOptions)
             .subscribe(resp => {
                 for (let p of resp.json()._embedded.produits) {
-                    this.produits.push(new Produit(p));
+                    this.combats.push(new Combat(c));
                 }
             });
     }
 
-    public findAll(): Array<Produit> {
-        return this.produits;
+    public findAll(): Array<Combat> {
+        return this.combats;
     }
 
 
-    public findAllByNom(nom: string): Array<Produit> {
-        return this.produits.filter(p =>
-            p.getNom()
-                .toLowerCase()
-                .indexOf(nom.toLowerCase()) !== -1
+    public findAllById(id: number): Array<Combat> {
+        return this.combats.filter(c => c.getId
+                  .indexOf(id.toLowerCase()) !== -1
         );
-    }
-
-
-    public save(produit: Produit) {
-        if (this.produits.indexOf(produit) === -1) {
-            produit.setGamme(this.appConfigService.getApiUrl() + "gammes/1");
-            this.http
-                .post(this.appConfigService.getApiUrl() + "produits", produit, this.requestOptions)
-                .subscribe(resp => this.produits.push(new Produit(resp.json())));
-        }
-
-        else {
-            this.http
-                .put(produit.getHref(), produit, this.requestOptions)
-                .subscribe();
-        }
-    }
-
-
-    public delete(produit: Produit) {
-        let myIndex: number = this.produits.indexOf(produit);
-        this.http
-            .delete(produit.getHref(), this.requestOptions)
-            .subscribe(resp => this.produits.splice(myIndex, 1));
     }
 }

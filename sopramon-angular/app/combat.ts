@@ -1,12 +1,4 @@
-import { Component } from '@angular/core';
-import { Combat } from './combat';
-import { CombatService } from './combat.service';
 
-
-@Component({
-    templateUrl: 'app/combat.component.html',
-    styleUrls: [ 'app/combat.component.css' ]
-})
 export class Combat {
       private id: string;
       private dateCombat: string;
