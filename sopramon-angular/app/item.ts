@@ -22,4 +22,20 @@ export class Item {
     return this.description;
   }
 
+  public getAttaque(): number {
+    return this.attaque;
+  }
+
+  public getDefense(): number {
+    return this.defense;
+  }
+
+  public getEsquive(): number {
+    return this.esquive;
+  }
+
+  public getVitesse(): number {
+    return this.vitesse;
+  }
+
 }
