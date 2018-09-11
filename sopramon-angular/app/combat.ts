@@ -1,4 +1,3 @@
-
 export class Combat {
       private id: string;
       private dateCombat: string;
