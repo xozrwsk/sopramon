@@ -7,6 +7,7 @@ import { Combat } from './combat';
 import { CombatComponent } from './combat.component';
 import { CombatService } from './combat.service';
 import { ICombatService } from './i-combat.service';
+import { ItemService } from './item.service';
 import { ICombatComponent } from './i-combat.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AppConfigService } from './app-config.service';
@@ -42,6 +43,7 @@ const routes: Routes = [
     AppConfigService,
     CombatService,
     ICombatService,
+    ItemService
   ],
 
 })

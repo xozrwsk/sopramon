@@ -18,7 +18,7 @@ export class CombatService {
       this.requestOptions = new RequestOptions ({headers: myHeaders });
 
        this.http
-            .get(this.appConfigService.getApiUrl() + "combats", this.requestOptions)
+            .get(this.appConfigService.getApiUrl() + "combat", this.requestOptions)
             .subscribe(resp => {
                 for (let c of resp.json()._embedded.combats) {
                     this.combats.push(new Combat(c));

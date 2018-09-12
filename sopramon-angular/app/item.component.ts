@@ -4,8 +4,7 @@ import { ItemService } from './item.service';
 
 
 @Component({
-    templateUrl: 'app/item.component.html',
-    styleUrls: ['app/item.component.css']
+    templateUrl: 'app/item.component.html'
 })
 export class ItemComponent {
     private item: Item = new Item();
