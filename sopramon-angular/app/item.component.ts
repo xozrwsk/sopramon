@@ -7,7 +7,7 @@ import { ItemService } from './item.service';
     templateUrl: 'app/item.component.html',
     styleUrls: ['app/item.component.css']
 })
-export class ProduitComponent {
+export class ItemComponent {
     private item: Item = new Item();
     private items: Array<Item> = new Array<Item>();
 

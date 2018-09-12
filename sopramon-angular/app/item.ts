@@ -1,11 +1,11 @@
 export class Item {
-  public nom;
-  public prix;
-  public description;
-  public attaque;
-  public defense;
-  public esquive;
-  public vitesse;
+  public nom: string;
+  public prix: number;
+  public description: string;
+  public attaque: number;
+  public defense: number;
+  public esquive: number;
+  public vitesse: number;
 
   // constructor(public nom?: string, private prix?: number) {
   // }
