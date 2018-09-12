@@ -9,8 +9,13 @@ import { ItemService } from './item.service';
 export class ItemComponent {
     private item: Item = new Item();
     private items: Array<Item> = new Array<Item>();
+    private filtre: string="";
 
     constructor(private itemService: ItemService) {
+    }
+
+    public filtrerItem() {
+      return this.itemService.findAllByNom(this.filtre);
     }
 
     public getItems(): Array<Item> {

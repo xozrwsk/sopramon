@@ -1,6 +1,10 @@
 <h1> Bienvenue dans le magasin </h1>
 
+<hr/>
+
 <h2> Liste des items </h2>
+
+Filtre : <input type="text" [(ngModel)]="filtre" />
 
 <table>
   <thead>
@@ -16,7 +20,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let i of items">
+    <tr *ngFor="let i of filtrerItem()">
       <td>{{ i.nom }}</td>
       <td>{{ i.prix }}</td>
       <td>{{ i.description }}</td>

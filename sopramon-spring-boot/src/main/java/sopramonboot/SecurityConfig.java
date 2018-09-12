@@ -16,6 +16,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 protected void configure(HttpSecurity http) throws Exception {
 http.authorizeRequests()
+.antMatchers("/api/**").permitAll()
 .antMatchers("/resources/**").permitAll()
 .antMatchers("/menu").permitAll()
 .antMatchers("/inscription").permitAll()
