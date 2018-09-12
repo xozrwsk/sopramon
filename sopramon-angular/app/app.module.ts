@@ -10,6 +10,7 @@ import { ICombatService } from './i-combat.service';
 import { ICombatComponent } from './i-combat.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AppConfigService } from './app-config.service';
+import { ItemComponent } from './item.component'
 
 // constructeurs ==> récupérer les informations
 //Configuration des routes
@@ -33,6 +34,7 @@ const routes: Routes = [
         AppComponent,
         ICombatComponent,
         CombatComponent,
+        ItemComponent
         ],
     bootstrap: [
     AppComponent ],
