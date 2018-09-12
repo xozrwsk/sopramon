@@ -1,7 +1,27 @@
-<!-- titre sopramon en police-sopramon -->
+<h1> Bienvenue dans l'arène </h1>
 
-<!-- <p> Sopramon - Liste Combat</p>
-    <table>
-        <tr combat-row></tr>
-        <tr *ngFor = "let c of combat()" combat-row [combat] = "c"></tr>
-</table> -->
+<hr/>
+
+<h2> Liste des combats </h2>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>N° combat</th>
+      <th>Date</th>
+      <th>Arene</th>
+      <th>Sopramon</th>
+      <th>Boss</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of lesCombats()">
+      <td>{{ c.id }}</td>
+      <td>{{ c.dateCombat }}</td>
+      <td>{{ c.arene }}</td>
+      <td>{{ c.sopramon }}</td>
+      <td>{{ c.boss }}</td>
+    </tr>
+  </tbody>
+</table>

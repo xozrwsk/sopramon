@@ -9,30 +9,21 @@ import { RequestOptions } from '@angular/http';
 export class CombatService {
 
     private combats: Array<Combat> = new Array<Combat>();
-    private requestOptions: RequestOptions;
+      private requestOptions: RequestOptions;
 
-    constructor(private http: Http, private appConfigService: AppConfigService ) {
-      let myHeaders: Headers = new Headers();
+  constructor(private http: Http, private appConfigService: AppConfigService ) {
+    let myHeaders: Headers = new Headers();
 
-      myHeaders.append('Authorization', this.appConfigService.getApiBasic());
-      this.requestOptions = new RequestOptions ({headers: myHeaders });
+    myHeaders.append('Authorization', this.appConfigService.getApiBasic());
+    this.requestOptions = new RequestOptions({headers: myHeaders});
 
-       this.http
-            .get(this.appConfigService.getApiUrl() + "combat", this.requestOptions)
-            .subscribe(resp => {
-                for (let c of resp.json()._embedded.combats) {
-                    this.combats.push(new Combat(c));
-                }
-            });
-    }
+    this.http
+        .get(this.appConfigService.getApiUrl() + "combats", this.requestOptions)
+        .subscribe(resp => this.combats = resp.json()._embedded.combats);
+  }
 
-    public findAll(): Array<Combat> {
-        return this.combats;
-    }
+  public findAll(): Array<Combat> {
+      return this.combats;
+  }
 
-
-    public findAllById(id: number): Array<Combat> {
-        return this.combats.filter(c => c.getId
-        );
-    }
-}
+  }

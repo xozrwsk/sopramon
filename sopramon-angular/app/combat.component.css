@@ -1,16 +1,3 @@
 body {
 	background-color: black;
 }
-
-body#combat {
-	background-image: url(combat.jpg);
-	background-repeat: no-repeat;
-	font-family: 'Indie Flower', cursive;
-}
-
-body#icombat {
-	background-image: url(icombat.jpg);
-	background-repeat: no-repeat;
-	background-size: 70%;
-	font-family: 'Indie Flower', cursive;
-}

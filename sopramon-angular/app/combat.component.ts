@@ -9,17 +9,12 @@ import { CombatService } from './combat.service';
 })
 export class CombatComponent {
 
+  private combat: Combat = new Combat();
   private combats: Array<Combat> = new Array<Combat>();
 
-    constructor(private combatService : CombatService) {
-          }
-
-
-    public getCombats() : Array<Combat>{
-      return  this.combatService.findAll();
-    }
-
-    public filtrerProduits(){
-        return this.combatService.findAllById(1);
-    }
+  constructor(private combatService: CombatService) {
   }
+  public lesCombats(): Array<Combat> {
+    return this.combatService.findAll();
+  }
+}
