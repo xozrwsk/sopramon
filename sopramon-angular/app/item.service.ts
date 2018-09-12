@@ -10,7 +10,7 @@ export class ItemService {
       return this.items;
   }
 
-  public acheterItem(): {
-
-  }
+  // public acheterItem(): {
+  //
+  // }
 }

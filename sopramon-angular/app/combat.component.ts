@@ -19,9 +19,7 @@ export class CombatComponent {
       return  this.combatService.findAll();
     }
 
-
     public filtrerProduits(){
-        return this.combatService.findAllById(this.filtre);
-
+        return this.combatService.findAllById(1);
     }
   }

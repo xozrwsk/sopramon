@@ -33,7 +33,6 @@ export class CombatService {
 
     public findAllById(id: number): Array<Combat> {
         return this.combats.filter(c => c.getId
-                  .indexOf(id.toLowerCase()) !== -1
         );
     }
 }
