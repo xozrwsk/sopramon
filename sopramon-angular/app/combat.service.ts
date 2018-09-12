@@ -20,7 +20,7 @@ export class CombatService {
        this.http
             .get(this.appConfigService.getApiUrl() + "combats", this.requestOptions)
             .subscribe(resp => {
-                for (let c of resp.json()._embedded.produits) {
+                for (let c of resp.json()._embedded.combats) {
                     this.combats.push(new Combat(c));
                 }
             });

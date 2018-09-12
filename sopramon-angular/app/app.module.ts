@@ -16,6 +16,8 @@ import { AppConfigService } from './app-config.service';
 const routes: Routes = [
   { path: 'icombat', component: ICombatComponent },
   { path: 'combat', component: CombatComponent },
+  { path: 'item', component: ItemComponent },
+  // { path: 'jouer', component: CombatComponent },
   { path: '', redirectTo: 'icombat', pathMatch: 'full' }
 ];
 

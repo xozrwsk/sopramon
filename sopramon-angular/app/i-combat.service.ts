@@ -6,4 +6,5 @@ import { CombatService } from './combat.service';
 @Injectable()
 export class ICombatService {
 
-}
+
+      }
